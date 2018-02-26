@@ -38,3 +38,5 @@ inline fun AssetManager.sounds(vararg files: String) = Array<Sound>(files.size).
         array.add(sound(file))
     }
 }
+inline fun AssetManager.skin(file: String): Skin = get(file, Skin::class.java)
+inline fun AssetManager.texture(file: String): Texture = get(file, Texture::class.java)
