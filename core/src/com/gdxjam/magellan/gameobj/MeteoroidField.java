@@ -9,7 +9,7 @@ import com.badlogic.gdx.scenes.scene2d.Actor;
 import com.badlogic.gdx.scenes.scene2d.ui.Image;
 import com.badlogic.gdx.scenes.scene2d.ui.Stack;
 import com.badlogic.gdx.utils.OrderedMap;
-import com.gdxjam.magellan.MagellanColors;
+import com.gdxjam.magellan.Colors;
 import com.gdxjam.magellan.MagellanGame;
 import com.gdxjam.magellan.Sector;
 import com.gdxjam.magellan.Strings;
@@ -46,13 +46,13 @@ public class MeteoroidField extends GameObj implements IDrawableMap, IDrawableWi
         }
         switch (resource){
             case 1:
-                mapSprite.setColor(MagellanColors.RESOURCE_1);
+                mapSprite.setColor(Colors.RESOURCE_1);
                 break;
             case 2:
-                mapSprite.setColor(MagellanColors.RESOURCE_2);
+                mapSprite.setColor(Colors.RESOURCE_2);
                 break;
             case 3:
-                mapSprite.setColor(MagellanColors.RESOURCE_3);
+                mapSprite.setColor(Colors.RESOURCE_3);
                 break;
         }
     }
@@ -73,13 +73,13 @@ public class MeteoroidField extends GameObj implements IDrawableMap, IDrawableWi
         } else {
             switch (resource) {
                 case 1:
-                    image2.setColor(MagellanColors.RESOURCE_1);
+                    image2.setColor(Colors.RESOURCE_1);
                     break;
                 case 2:
-                    image2.setColor(MagellanColors.RESOURCE_2);
+                    image2.setColor(Colors.RESOURCE_2);
                     break;
                 case 3:
-                    image2.setColor(MagellanColors.RESOURCE_3);
+                    image2.setColor(Colors.RESOURCE_3);
                     break;
             }
         }

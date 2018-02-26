@@ -10,7 +10,7 @@ import com.badlogic.gdx.scenes.scene2d.ui.TextButton;
 import com.badlogic.gdx.scenes.scene2d.ui.VerticalGroup;
 import com.badlogic.gdx.scenes.scene2d.utils.ChangeListener;
 import com.badlogic.gdx.utils.Align;
-import com.gdxjam.magellan.MagellanColors;
+import com.gdxjam.magellan.Colors;
 import com.gdxjam.magellan.MagellanGame;
 
 /**
@@ -26,7 +26,7 @@ public class TitleScreen extends BaseScreen {
         createStarfield();
         bg = new Sprite(MagellanGame.assets.get("sectorview_planet_"+ MathUtils.random(1,4)+".png", Texture.class));
         bg.setSize(600,600);
-        bg.setColor(MagellanColors.PLANET_2);
+        bg.setColor(Colors.PLANET_2);
         bg.setPosition(1280-bg.getWidth(),720-bg.getHeight());
         title = new Sprite(MagellanGame.assets.get("title.png", Texture.class));
         title.setSize(721*0.7f, 317*.7f);

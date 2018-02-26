@@ -1,14 +1,13 @@
 package com.gdxjam.magellan.screen;
 
-import aurelienribon.tweenengine.*;
+import aurelienribon.tweenengine.BaseTween;
+import aurelienribon.tweenengine.Tween;
+import aurelienribon.tweenengine.TweenCallback;
+import aurelienribon.tweenengine.TweenEquations;
 import com.badlogic.gdx.Gdx;
-import com.badlogic.gdx.files.FileHandle;
-import com.badlogic.gdx.graphics.Color;
-import com.badlogic.gdx.graphics.Pixmap;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.ParticleEffect;
 import com.badlogic.gdx.graphics.g2d.Sprite;
-import com.badlogic.gdx.math.Interpolation;
 import com.badlogic.gdx.math.MathUtils;
 import com.badlogic.gdx.scenes.scene2d.Actor;
 import com.badlogic.gdx.scenes.scene2d.InputEvent;
@@ -17,14 +16,16 @@ import com.badlogic.gdx.scenes.scene2d.ui.*;
 import com.badlogic.gdx.scenes.scene2d.utils.ChangeListener;
 import com.badlogic.gdx.utils.Array;
 import com.badlogic.gdx.utils.Timer;
-import com.gdxjam.magellan.*;
+import com.gdxjam.magellan.Battle;
+import com.gdxjam.magellan.Colors;
+import com.gdxjam.magellan.MagellanGame;
+import com.gdxjam.magellan.Sector;
 import com.gdxjam.magellan.drones.Drone;
 import com.gdxjam.magellan.gameobj.*;
 import com.gdxjam.magellan.ships.AiShip;
 import com.gdxjam.magellan.ships.PlayerShip;
 import com.gdxjam.magellan.shopitem.ScreenShake;
 import com.gdxjam.magellan.tweening.ActorAccessor;
-import com.gdxjam.magellan.tweening.SpriteAccessor;
 
 /**
  * Created by lolcorner on 20.12.2015.
@@ -161,10 +162,10 @@ public class WindowScreen extends BaseScreen {
                         Image imageClaimed = new Image(MagellanGame.assets.get("map_planet_claimed.png", Texture.class));
 
                         if (gameObj.faction == GameObj.Factions.PLAYER) {
-                            imageClaimed.setColor(MagellanColors.FACTION_PLAYER);
+                            imageClaimed.setColor(Colors.FACTION_PLAYER);
                         }
                         if (gameObj.faction == GameObj.Factions.SAATOO) {
-                            imageClaimed.setColor(MagellanColors.FACTION_ENEMY);
+                            imageClaimed.setColor(Colors.FACTION_ENEMY);
                         }
                         imageClaimed.setRotation(102);
                         imageClaimed.setScaleX(-1);
@@ -291,7 +292,7 @@ public class WindowScreen extends BaseScreen {
         spBar.setPosition(1280/2 - spBar.getWidth()/2, 20);
         spPixel.setSize(spBar.getWidth()/game.universe.playerShip.maxHealth * game.universe.playerShip.health ,spBar.getHeight());
         spPixel.setPosition(spBar.getX(), spBar.getY());
-        spPixel.setColor(MagellanColors.FACTION_PLAYER);
+        spPixel.setColor(Colors.FACTION_PLAYER);
         spPixel.setScale(1);
         spPixel.setRotation(0);
         spPixel.draw(batch);

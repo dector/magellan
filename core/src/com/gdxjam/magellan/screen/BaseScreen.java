@@ -1,6 +1,5 @@
 package com.gdxjam.magellan.screen;
 
-import aurelienribon.tweenengine.BaseTween;
 import aurelienribon.tweenengine.TweenManager;
 import com.badlogic.gdx.*;
 import com.badlogic.gdx.audio.Music;
@@ -16,7 +15,7 @@ import com.badlogic.gdx.scenes.scene2d.*;
 import com.badlogic.gdx.scenes.scene2d.ui.*;
 import com.badlogic.gdx.scenes.scene2d.utils.ChangeListener;
 import com.badlogic.gdx.utils.viewport.FitViewport;
-import com.gdxjam.magellan.MagellanColors;
+import com.gdxjam.magellan.Colors;
 import com.gdxjam.magellan.MagellanGame;
 import com.gdxjam.magellan.UiTopbar;
 
@@ -255,7 +254,7 @@ public class BaseScreen implements Screen, InputProcessor {
         int amount_big = 20;
 
         Pixmap bg = new Pixmap(width, height, Pixmap.Format.RGBA8888);
-        bg.setColor(MagellanColors.UNIVERSE_BG);
+        bg.setColor(Colors.UNIVERSE_BG);
         bg.fillRectangle(0,0,width,height);
 
         bg.setColor(Color.WHITE);

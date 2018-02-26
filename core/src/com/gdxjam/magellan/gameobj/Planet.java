@@ -34,12 +34,12 @@ public class Planet extends GameObj implements IDrawableMap, IDestroyable, IInte
         super(sector);
         visualType = MathUtils.random(1,4);
         switch (MathUtils.random(4)) {
-            case 0: color = MagellanColors.PLANET_1; break;
-            case 1: color = MagellanColors.PLANET_2; break;
-            case 2: color = MagellanColors.PLANET_3; break;
-            case 3: color = MagellanColors.PLANET_4; break;
-            case 4: color = MagellanColors.PLANET_5; break;
-            default: color = MagellanColors.PLANET_1; break;
+            case 0: color = Colors.PLANET_1; break;
+            case 1: color = Colors.PLANET_2; break;
+            case 2: color = Colors.PLANET_3; break;
+            case 3: color = Colors.PLANET_4; break;
+            case 4: color = Colors.PLANET_5; break;
+            default: color = Colors.PLANET_1; break;
         }
         resource1 = MathUtils.random(50,200);
         resource2 = MathUtils.random(50,200);
@@ -78,10 +78,10 @@ public class Planet extends GameObj implements IDrawableMap, IDestroyable, IInte
 
 
         if (faction == Factions.PLAYER) {
-            mapClaimedSprite.setColor(MagellanColors.FACTION_PLAYER);
+            mapClaimedSprite.setColor(Colors.FACTION_PLAYER);
         }
         if (faction == Factions.SAATOO) {
-            mapClaimedSprite.setColor(MagellanColors.FACTION_ENEMY);
+            mapClaimedSprite.setColor(Colors.FACTION_ENEMY);
         }
         if (faction == Factions.PLAYER || faction == Factions.SAATOO) {
             mapClaimedSprite.setPosition(sector.position.x, sector.position.y + mapSprite.getHeight()/4);

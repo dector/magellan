@@ -112,15 +112,15 @@ public class UiTopbar {
         String label;
         switch (resourceNum) {
             case 1:
-                color = MagellanColors.RESOURCE_1;
+                color = Colors.RESOURCE_1;
                 label = Strings.resource1;
                 break;
             case 2:
-                color = MagellanColors.RESOURCE_2;
+                color = Colors.RESOURCE_2;
                 label = Strings.resource2;
                 break;
             case 3:
-                color = MagellanColors.RESOURCE_3;
+                color = Colors.RESOURCE_3;
                 label = Strings.resource3;
                 break;
             default:

@@ -1,17 +1,15 @@
 package com.gdxjam.magellan.screen;
 
-import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input;
 import com.badlogic.gdx.graphics.Color;
-import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.Texture;
-import com.badlogic.gdx.graphics.g2d.NinePatch;
 import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.math.*;
-import com.badlogic.gdx.scenes.scene2d.ui.*;
-import com.badlogic.gdx.scenes.scene2d.utils.NinePatchDrawable;
+import com.badlogic.gdx.scenes.scene2d.ui.HorizontalGroup;
+import com.badlogic.gdx.scenes.scene2d.ui.ScrollPane;
+import com.badlogic.gdx.scenes.scene2d.ui.VerticalGroup;
 import com.badlogic.gdx.utils.Timer;
 import com.badlogic.gdx.utils.viewport.FitViewport;
 import com.badlogic.gdx.utils.viewport.Viewport;
@@ -167,7 +165,7 @@ public class MapScreen extends BaseScreen {
 
                 tmp1 = sector.position.cpy().sub(_sector.position);
                 if(sector == universe.playerShip.sector || _sector == universe.playerShip.sector) {
-                    pixel.setColor(MagellanColors.MAP_POSSIBLE_MOVEMENT);
+                    pixel.setColor(Colors.MAP_POSSIBLE_MOVEMENT);
                     pixel.setAlpha(1f);
                     pixel.setSize(tmp1.len()+lineWidth/2, lineWidth);
                     pixel.setOrigin(0,lineWidth/2);

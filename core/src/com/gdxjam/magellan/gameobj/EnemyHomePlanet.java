@@ -1,17 +1,12 @@
 package com.gdxjam.magellan.gameobj;
 
-import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.Sprite;
-import com.badlogic.gdx.graphics.g2d.SpriteBatch;
-import com.badlogic.gdx.math.MathUtils;
 import com.badlogic.gdx.scenes.scene2d.Actor;
 import com.badlogic.gdx.scenes.scene2d.ui.Image;
-import com.badlogic.gdx.utils.OrderedMap;
-import com.gdxjam.magellan.*;
-import com.gdxjam.magellan.ships.AiShipSettler;
-import com.gdxjam.magellan.ships.PlayerShip;
-import com.gdxjam.magellan.ships.Ship;
+import com.gdxjam.magellan.Colors;
+import com.gdxjam.magellan.MagellanGame;
+import com.gdxjam.magellan.Sector;
 
 
 /**
@@ -21,7 +16,7 @@ public class EnemyHomePlanet extends Planet {
 
     public EnemyHomePlanet(Sector sector) {
         super(sector);
-        color = MagellanColors.FACTION_ENEMY;
+        color = Colors.FACTION_ENEMY;
     }
 
     @Override
