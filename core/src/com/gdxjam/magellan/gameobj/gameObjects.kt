@@ -29,7 +29,7 @@ interface IDestroyable : Disposable {
 
     fun inBattle(): Boolean
 
-    fun setBattle(battle: Battle)
+    fun setBattle(battle: Battle?)
 }
 
 interface IDrawableMap {

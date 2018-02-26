@@ -32,8 +32,7 @@ class MagellanGame : Game() {
         var DEBUG = false
     }
 
-    @JvmField
-    var universe: Universe
+    lateinit var universe: Universe
 
     lateinit var mapScreen: MapScreen
     lateinit var windowScreen: WindowScreen
@@ -43,9 +42,6 @@ class MagellanGame : Game() {
 
     init {
         Companion.instance = this
-
-        universe = Universe(this)
-        Companion.gameState = GameState(this)
     }
 
     override fun create() {
@@ -135,6 +131,9 @@ class MagellanGame : Game() {
 
             finishLoading()
         }
+
+        universe = Universe(this)
+        Companion.gameState = GameState(this)
 
         soundFx = SoundFx(assets)
 
