@@ -71,7 +71,7 @@ public class AiShipSmallFighter extends AiShip {
                 }
             }
         }
-        if(target != null && target.isAlive() && MagellanGame.gameState.AI_HOSTILITY >= 5){
+        if(target != null && target.isAlive() && MagellanGame.gameState.aiHostility >= 5){
             state = States.HOSTILE;
             return;
         }

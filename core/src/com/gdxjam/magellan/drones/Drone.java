@@ -1,9 +1,5 @@
 package com.gdxjam.magellan.drones;
 
-import aurelienribon.tweenengine.Timeline;
-import aurelienribon.tweenengine.Tween;
-import aurelienribon.tweenengine.TweenEquations;
-import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
@@ -14,9 +10,10 @@ import com.badlogic.gdx.scenes.scene2d.ui.*;
 import com.badlogic.gdx.scenes.scene2d.utils.ChangeListener;
 import com.badlogic.gdx.utils.Array;
 import com.badlogic.gdx.utils.OrderedMap;
-import com.gdxjam.magellan.*;
+import com.gdxjam.magellan.Battle;
+import com.gdxjam.magellan.MagellanGame;
+import com.gdxjam.magellan.Sector;
 import com.gdxjam.magellan.gameobj.*;
-import com.gdxjam.magellan.tweening.SpriteAccessor;
 
 /**
  * Created by saibotd on 26.12.15.
@@ -167,7 +164,7 @@ public class Drone extends MovingGameObj implements IDestroyable, IDrawableMap, 
 
     private void updateLists(){
         listItems = new Array<DroneRoutine.ROUTINES>();
-        for(DroneRoutine.ROUTINES  routine: MagellanGame.gameState.UNLOCKED_ROUTINES){
+        for(DroneRoutine.ROUTINES  routine: MagellanGame.gameState.unlockedRoutines){
             if(!selectedRoutines.contains(routine, false))
                 listItems.add(routine);
         }

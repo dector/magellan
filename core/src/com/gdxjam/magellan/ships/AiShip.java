@@ -2,8 +2,8 @@ package com.gdxjam.magellan.ships;
 
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.gdxjam.magellan.MagellanGame;
-import com.gdxjam.magellan.gameobj.IDestroyable;
 import com.gdxjam.magellan.Sector;
+import com.gdxjam.magellan.gameobj.IDestroyable;
 
 /**
  * Created by lolcorner on 20.12.2015.
@@ -15,7 +15,7 @@ public class AiShip extends Ship {
     @Override
     public String getTitle() {
         String title = "ENEMY SHIP";
-        if(MagellanGame.gameState.AI_HOSTILITY < 3){
+        if(MagellanGame.gameState.aiHostility < 3){
             title = "STRANGE SHIP";
         }
         return title;
@@ -35,21 +35,21 @@ public class AiShip extends Ship {
 
     public void activeTick(){
         if(sector == MagellanGame.instance.universe.playerShip.sector){
-            switch (MagellanGame.gameState.AI_HOSTILITY){
+            switch (MagellanGame.gameState.aiHostility){
                 case 0:
                     MagellanGame.instance.showWindowScreen();
                     MagellanGame.instance.windowScreen.getWindow("Communication", "Who are you?\nAre you one of us?");
-                    MagellanGame.gameState.AI_HOSTILITY++;
+                    MagellanGame.gameState.aiHostility++;
                     break;
                 case 1:
                     MagellanGame.instance.showWindowScreen();
                     MagellanGame.instance.windowScreen.getWindow("Communication", "Saatoo knows about you and your plans.\nWe don't like it.\nSTAY AWAY FROM SAATOO!");
-                    MagellanGame.gameState.AI_HOSTILITY++;
+                    MagellanGame.gameState.aiHostility++;
                     break;
                 case 2:
                     MagellanGame.instance.showWindowScreen();
                     MagellanGame.instance.windowScreen.getWindow("Communication", "This is your final warning!\nHumanity doesn't deserve a second chance.\nRETREAT OR GET CRUSHED BY SAATOO!");
-                    MagellanGame.gameState.AI_HOSTILITY = 5;
+                    MagellanGame.gameState.aiHostility = 5;
                     break;
             }
         }

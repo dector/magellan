@@ -60,7 +60,7 @@ private data class LogEntry(
     companion object {
 
         fun from(text: String, sector: Sector? = null) = LogEntry(
-                text = if (text == "") "" else "${MagellanGame.gameState.YEAR} $text",
+                text = if (text == "") "" else "${MagellanGame.gameState.year} $text",
                 sector = sector
         )
     }

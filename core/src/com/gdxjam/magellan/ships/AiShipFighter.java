@@ -7,10 +7,10 @@ import com.badlogic.gdx.scenes.scene2d.ui.Image;
 import com.badlogic.gdx.scenes.scene2d.ui.Stack;
 import com.gdxjam.magellan.Battle;
 import com.gdxjam.magellan.MagellanGame;
+import com.gdxjam.magellan.Sector;
 import com.gdxjam.magellan.drones.Drone;
 import com.gdxjam.magellan.gameobj.GameObj;
 import com.gdxjam.magellan.gameobj.IDestroyable;
-import com.gdxjam.magellan.Sector;
 import com.gdxjam.magellan.gameobj.Planet;
 
 /**
@@ -71,7 +71,7 @@ public class AiShipFighter extends AiShip {
                 }
             }
         }
-        if(target != null && target.isAlive() && MagellanGame.gameState.AI_HOSTILITY >= 5){
+        if(target != null && target.isAlive() && MagellanGame.gameState.aiHostility >= 5){
             state = States.HOSTILE;
             if(health < 2 && Math.random() < .5){
                 state = States.FLEEING;

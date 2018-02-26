@@ -118,7 +118,7 @@ public class Universe {
 
         if(enemyPlanet.faction == GameObj.Factions.SAATOO) {
 
-            if (MagellanGame.gameState.YEARS_PASSED == 1) {
+            if (MagellanGame.gameState.yearsPassed == 1) {
                 addEnemies(20, 5, 20);
             }
 

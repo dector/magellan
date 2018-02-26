@@ -88,13 +88,13 @@ public class UiTopbar {
     }
 
     public void updateStats() {
-        valueResource1.setText(MagellanGame.gameState.RESOURCE1 + "");
-        valueResource2.setText(MagellanGame.gameState.RESOURCE2 + "");
-        valueResource3.setText(MagellanGame.gameState.RESOURCE3 + "");
-        valueYear.setText(MagellanGame.gameState.YEAR + "");
-        valueCredits.setText(MagellanGame.gameState.CREDITS + "");
-        valuePopulation.setText(MagellanGame.gameState.POPULATION + "");
-        //valueDrones.setText(MagellanGame.gameState.DRONES + "");
+        valueResource1.setText(MagellanGame.gameState.resource1 + "");
+        valueResource2.setText(MagellanGame.gameState.resource2 + "");
+        valueResource3.setText(MagellanGame.gameState.resource3 + "");
+        valueYear.setText(MagellanGame.gameState.year + "");
+        valueCredits.setText(MagellanGame.gameState.credits + "");
+        valuePopulation.setText(MagellanGame.gameState.population + "");
+        //valueDrones.setText(MagellanGame.gameState.drones + "");
         //valueHealth.setText(game.universe.playerShip.health + "");
     }
 

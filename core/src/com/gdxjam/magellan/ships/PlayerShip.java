@@ -13,7 +13,8 @@ import com.badlogic.gdx.scenes.scene2d.ui.Image;
 import com.badlogic.gdx.scenes.scene2d.ui.Stack;
 import com.badlogic.gdx.utils.Array;
 import com.badlogic.gdx.utils.OrderedMap;
-import com.gdxjam.magellan.*;
+import com.gdxjam.magellan.MagellanGame;
+import com.gdxjam.magellan.Sector;
 import com.gdxjam.magellan.drones.Drone;
 import com.gdxjam.magellan.gameobj.GameObj;
 import com.gdxjam.magellan.gameobj.IDestroyable;
@@ -44,7 +45,7 @@ public class PlayerShip extends Ship implements IInteractable {
     }
 
     public int shootAt(IDestroyable target){
-        MagellanGame.gameState.AI_HOSTILITY = 5;
+        MagellanGame.gameState.aiHostility = 5;
         return super.shootAt(target);
     }
 

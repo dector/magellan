@@ -135,13 +135,13 @@ public class MeteoroidField extends GameObj implements IDrawableMap, IDrawableWi
                 public void interact() {
                     switch (meteoroidField.resource){
                         case 1:
-                            MagellanGame.gameState.RESOURCE1 += meteoroidField.mine(((PlayerShip) with).mineResourcesPerTick);
+                            MagellanGame.gameState.resource1 += meteoroidField.mine(((PlayerShip) with).mineResourcesPerTick);
                             break;
                         case 2:
-                            MagellanGame.gameState.RESOURCE2 += meteoroidField.mine(((PlayerShip) with).mineResourcesPerTick);
+                            MagellanGame.gameState.resource2 += meteoroidField.mine(((PlayerShip) with).mineResourcesPerTick);
                             break;
                         case 3:
-                            MagellanGame.gameState.RESOURCE3 += meteoroidField.mine(((PlayerShip) with).mineResourcesPerTick);
+                            MagellanGame.gameState.resource3 += meteoroidField.mine(((PlayerShip) with).mineResourcesPerTick);
                             break;
 
                     }

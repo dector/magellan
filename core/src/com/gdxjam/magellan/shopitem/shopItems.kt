@@ -40,7 +40,7 @@ class ShopItemDroneRoutine(
         price = price) {
 
     override fun buy(buyer: PlayerShip) {
-        MagellanGame.gameState.UNLOCKED_ROUTINES.add(routine)
+        MagellanGame.gameState.unlockedRoutines.add(routine)
     }
 
     companion object {

@@ -6,7 +6,9 @@ import com.badlogic.gdx.math.MathUtils;
 import com.badlogic.gdx.scenes.scene2d.Actor;
 import com.badlogic.gdx.scenes.scene2d.ui.Image;
 import com.badlogic.gdx.scenes.scene2d.ui.Stack;
-import com.gdxjam.magellan.*;
+import com.gdxjam.magellan.Battle;
+import com.gdxjam.magellan.MagellanGame;
+import com.gdxjam.magellan.Sector;
 import com.gdxjam.magellan.drones.Drone;
 import com.gdxjam.magellan.gameobj.GameObj;
 import com.gdxjam.magellan.gameobj.IDestroyable;
@@ -79,7 +81,7 @@ public class AiShipSettler extends AiShip {
                 planet.populate(this,  MathUtils.random(500,1500));
             }
         }
-        if(target != null && target.isAlive() && MagellanGame.gameState.AI_HOSTILITY >= 5){
+        if(target != null && target.isAlive() && MagellanGame.gameState.aiHostility >= 5){
             state = States.FLEEING;
             if(Math.random() < .2){
                 state = States.HOSTILE;

@@ -259,10 +259,10 @@ public class MapScreen extends BaseScreen {
                 ship2.prepareRenderingOnMap();
                 break;
             case Input.Keys.L:
-                MagellanGame.gameState.CREDITS += 100000;
-                MagellanGame.gameState.RESOURCE1 += 1000;
-                MagellanGame.gameState.RESOURCE2 += 1000;
-                MagellanGame.gameState.RESOURCE3 += 1000;
+                MagellanGame.gameState.credits += 100000;
+                MagellanGame.gameState.resource1 += 1000;
+                MagellanGame.gameState.resource2 += 1000;
+                MagellanGame.gameState.resource3 += 1000;
                 universe.playerShip.drones.add(1);
                 universe.playerShip.drones.add(2);
                 universe.playerShip.drones.add(3);

@@ -198,7 +198,7 @@ public class WindowScreen extends BaseScreen {
                         public boolean touchDown(InputEvent event, float x, float y, int pointer, int button) {
                             if(game.universe.playerShip.inBattle()) return true;
                             for(GameObj _gameObj : game.universe.playerShip.sector.gameObjs){
-                                if(!(gameObj instanceof AiShip) && _gameObj instanceof AiShip && MagellanGame.gameState.AI_HOSTILITY >= 5){
+                                if(!(gameObj instanceof AiShip) && _gameObj instanceof AiShip && MagellanGame.gameState.aiHostility >= 5){
                                     Window window = getWindow("Alert!", "Beware! Enemy ships in sector!");
                                     return false;
                                 }

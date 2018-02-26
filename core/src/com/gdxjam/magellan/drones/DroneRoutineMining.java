@@ -2,10 +2,9 @@ package com.gdxjam.magellan.drones;
 
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.Sprite;
-import com.badlogic.gdx.math.MathUtils;
 import com.badlogic.gdx.utils.Array;
-import com.gdxjam.magellan.gameobj.GameObj;
 import com.gdxjam.magellan.MagellanGame;
+import com.gdxjam.magellan.gameobj.GameObj;
 import com.gdxjam.magellan.gameobj.MeteoroidField;
 
 /**
@@ -34,15 +33,15 @@ public class DroneRoutineMining extends DroneRoutine{
         for(MeteoroidField meteoroidField :metroidFields){
             switch (meteoroidField.resource){
                 case 1:
-                    MagellanGame.gameState.RESOURCE1 += meteoroidField.mine(Math.round(resourcesPerTick * powerLevel));
+                    MagellanGame.gameState.resource1 += meteoroidField.mine(Math.round(resourcesPerTick * powerLevel));
                     resCounter += meteoroidField.resourceAmount;
                     break;
                 case 2:
-                    MagellanGame.gameState.RESOURCE2 += meteoroidField.mine(Math.round(resourcesPerTick * powerLevel));
+                    MagellanGame.gameState.resource2 += meteoroidField.mine(Math.round(resourcesPerTick * powerLevel));
                     resCounter += meteoroidField.resourceAmount;
                     break;
                 case 3:
-                    MagellanGame.gameState.RESOURCE3 += meteoroidField.mine(Math.round(resourcesPerTick * powerLevel));
+                    MagellanGame.gameState.resource3 += meteoroidField.mine(Math.round(resourcesPerTick * powerLevel));
                     resCounter += meteoroidField.resourceAmount;
                     break;
 

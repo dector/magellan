@@ -15,7 +15,7 @@ public class StoryScreen extends BaseScreen {
     public StoryScreen(MagellanGame _game) {
         super(_game);
         stage.clear();
-        theStory = "It's the year " + MagellanGame.gameState.YEAR + ".";
+        theStory = "It's the year " + MagellanGame.gameState.year + ".";
         theStory += "\n\n";
         theStory += "\nAt the climax of World War XIV";
         theStory += "\nit finally happened - the earth exploded.";

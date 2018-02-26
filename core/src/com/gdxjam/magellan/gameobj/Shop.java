@@ -42,11 +42,11 @@ public class Shop extends MovingGameObj implements IDrawableWindow, IDrawableMap
 
 
 
-        if(!MagellanGame.gameState.UNLOCKED_ROUTINES.contains(DroneRoutine.ROUTINES.ATTACKING, false))
+        if(!MagellanGame.gameState.unlockedRoutines.contains(DroneRoutine.ROUTINES.ATTACKING, false))
             inventory.add(new ShopItemDroneRoutine(DroneRoutine.ROUTINES.ATTACKING, 6000));
-        if(!MagellanGame.gameState.UNLOCKED_ROUTINES.contains(DroneRoutine.ROUTINES.ADVSCOUTING, false))
+        if(!MagellanGame.gameState.unlockedRoutines.contains(DroneRoutine.ROUTINES.ADVSCOUTING, false))
             inventory.add(new ShopItemDroneRoutine(DroneRoutine.ROUTINES.ADVSCOUTING, 1200));
-        if(!MagellanGame.gameState.UNLOCKED_ROUTINES.contains(DroneRoutine.ROUTINES.FOLLOWING, false))
+        if(!MagellanGame.gameState.unlockedRoutines.contains(DroneRoutine.ROUTINES.FOLLOWING, false))
             inventory.add(new ShopItemDroneRoutine(DroneRoutine.ROUTINES.FOLLOWING, 4000));
 
         inventory.add(new ShopItemUpgrade(MagellanGame.instance.universe.playerShip.attack * 2 * 430, ShopItemUpgrade.UpgradeType.ATTACK));
@@ -111,8 +111,8 @@ public class Shop extends MovingGameObj implements IDrawableWindow, IDrawableMap
             @Override
             public void changed(ChangeEvent event, Actor actor) {
                 ShopItem item = inventory.get(list.getSelectedIndex());
-                if(item.price <= MagellanGame.gameState.CREDITS) {
-                    MagellanGame.gameState.CREDITS -= item.price;
+                if(item.price <= MagellanGame.gameState.credits) {
+                    MagellanGame.gameState.credits -= item.price;
                     item.buy(MagellanGame.instance.universe.playerShip);
                     MagellanGame.soundFx.buy.play(0.7f);
                     droneBought = item instanceof ShopItemDrone;
@@ -127,7 +127,7 @@ public class Shop extends MovingGameObj implements IDrawableWindow, IDrawableMap
             @Override
             public void changed(ChangeEvent event, Actor actor) {
                 MagellanGame.instance.windowScreen.closeWindow();
-                if(!MagellanGame.gameState.DRONE_INFO_SHOWN && droneBought){
+                if(!MagellanGame.gameState.droneInfoShown && droneBought){
                     String s = "Drones can be deployed by clicking on your ship";
                     s += "\non the left side. After deploying a drone,";
                     s += "\nbe sure to click on it and setup routines.";
@@ -135,7 +135,7 @@ public class Shop extends MovingGameObj implements IDrawableWindow, IDrawableMap
                     s += "\nof them. If you setup less routines than maximum";
                     s += "\nthe set up routines become more powerful.";
                     MagellanGame.instance.windowScreen.getWindow("INFO", s);
-                    MagellanGame.gameState.DRONE_INFO_SHOWN = true;
+                    MagellanGame.gameState.droneInfoShown = true;
                 }
             }
         });
@@ -202,7 +202,7 @@ public class Shop extends MovingGameObj implements IDrawableWindow, IDrawableMap
     @Override
     public String getInfo() {
         String s = "INTERCOM: Hello good friend! We have drones, upgrades,\nanything you need!\nIf you have the credits, that is.";
-        if(MagellanGame.gameState.CREDITS == 0){
+        if(MagellanGame.gameState.credits == 0){
             s = "INTERCOM: Hey there! Weird, our scanners pick up 0 credits on your ship\nand no, we won't accept frozen lifeforms as a substitute!";
             s += "\nHow about this:\nYou populate some planets with those creatures\nand they will generate credits for you.";
             s += "\nYou bring those credits to our trading outposts\nand we sell you cool stuff! Deal? Deal!";
