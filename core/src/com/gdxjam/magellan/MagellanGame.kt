@@ -136,7 +136,7 @@ class MagellanGame : Game() {
             finishLoading()
         }
 
-        soundFx = SoundFx()
+        soundFx = SoundFx(assets)
 
         titleScreen = TitleScreen(this)
         mapScreen = MapScreen(this)
