@@ -231,9 +231,8 @@ public class MapScreen extends BaseScreen {
             case Input.Keys.D:
                 keyboardPanX = 10*camera.zoom;
                 break;
-            case Input.Keys.Z:
-                MagellanGame.DEBUG = !MagellanGame.DEBUG;
-                break;
+            default:
+                super.keyDown(keyCode);
         }
         return false;
     }

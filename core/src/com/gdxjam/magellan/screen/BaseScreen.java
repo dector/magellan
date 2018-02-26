@@ -117,6 +117,14 @@ public class BaseScreen implements Screen, InputProcessor {
 
     @Override
     public boolean keyDown(int keycode) {
+        switch (keycode) {
+            case Input.Keys.Z:
+                MagellanGame.DEBUG = !MagellanGame.DEBUG;
+                break;
+            case Input.Keys.ESCAPE:
+                if (MagellanGame.DEBUG) Gdx.app.exit();
+                break;
+        }
         return false;
     }
 
