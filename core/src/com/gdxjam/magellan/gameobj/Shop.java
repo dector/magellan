@@ -49,10 +49,10 @@ public class Shop extends MovingGameObj implements IDrawableWindow, IDrawableMap
         if(!MagellanGame.gameState.UNLOCKED_ROUTINES.contains(DroneRoutine.ROUTINES.FOLLOWING, false))
             inventory.add(new ShopItemDroneRoutine(DroneRoutine.ROUTINES.FOLLOWING, 4000));
 
-        inventory.add(new ShopItemUpgrade(MagellanGame.instance.universe.playerShip.attack * 2 * 430, ShopItemUpgrade.upgradeType.ATTACK));
-        inventory.add(new ShopItemUpgrade(MagellanGame.instance.universe.playerShip.maxHealth * 2 * 320, ShopItemUpgrade.upgradeType.HEALTH));
+        inventory.add(new ShopItemUpgrade(MagellanGame.instance.universe.playerShip.attack * 2 * 430, ShopItemUpgrade.UpgradeType.ATTACK));
+        inventory.add(new ShopItemUpgrade(MagellanGame.instance.universe.playerShip.maxHealth * 2 * 320, ShopItemUpgrade.UpgradeType.HEALTH));
         if(MagellanGame.instance.universe == null || MagellanGame.instance.universe.playerShip.shield < .5)
-            inventory.add(new ShopItemUpgrade((int) ((MagellanGame.instance.universe.playerShip.shield * 10 + 1) * 3500), ShopItemUpgrade.upgradeType.SHIELD));
+            inventory.add(new ShopItemUpgrade((int) ((MagellanGame.instance.universe.playerShip.shield * 10 + 1) * 3500), ShopItemUpgrade.UpgradeType.SHIELD));
     }
 
     @Override
