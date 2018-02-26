@@ -50,7 +50,7 @@ public class Drone extends MovingGameObj implements IDestroyable, IDrawableMap, 
 
         routines.add(routine);
         for(DroneRoutine _routine : routines){
-            _routine.setPowerLevel((float) maxNumberOfRoutines / routines.size);
+            _routine.powerLevel = (float) maxNumberOfRoutines / routines.size;
         }
     }
 
