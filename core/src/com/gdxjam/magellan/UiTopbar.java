@@ -1,12 +1,10 @@
 package com.gdxjam.magellan;
 
-import com.badlogic.gdx.graphics.*;
+import com.badlogic.gdx.graphics.Color;
+import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
-import com.badlogic.gdx.scenes.scene2d.Actor;
-import com.badlogic.gdx.scenes.scene2d.Stage;
 import com.badlogic.gdx.scenes.scene2d.ui.*;
-import com.badlogic.gdx.scenes.scene2d.utils.ChangeListener;
 import com.badlogic.gdx.utils.Align;
 import com.badlogic.gdx.utils.viewport.FitViewport;
 
@@ -115,15 +113,15 @@ public class UiTopbar {
         switch (resourceNum) {
             case 1:
                 color = MagellanColors.RESOURCE_1;
-                label = Statics.resource1;
+                label = Strings.resource1;
                 break;
             case 2:
                 color = MagellanColors.RESOURCE_2;
-                label = Statics.resource2;
+                label = Strings.resource2;
                 break;
             case 3:
                 color = MagellanColors.RESOURCE_3;
-                label = Statics.resource3;
+                label = Strings.resource3;
                 break;
             default:
                 color = Color.WHITE;

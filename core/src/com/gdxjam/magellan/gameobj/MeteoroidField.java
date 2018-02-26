@@ -1,6 +1,5 @@
 package com.gdxjam.magellan.gameobj;
 
-import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.Sprite;
@@ -13,7 +12,7 @@ import com.badlogic.gdx.utils.OrderedMap;
 import com.gdxjam.magellan.MagellanColors;
 import com.gdxjam.magellan.MagellanGame;
 import com.gdxjam.magellan.Sector;
-import com.gdxjam.magellan.Statics;
+import com.gdxjam.magellan.Strings;
 import com.gdxjam.magellan.ships.PlayerShip;
 
 /**
@@ -99,13 +98,13 @@ public class MeteoroidField extends GameObj implements IDrawableMap, IDrawableWi
         String resourceName = "";
         switch (resource){
             case 1:
-                resourceName = Statics.resource1;
+                resourceName = Strings.resource1;
                 break;
             case 2:
-                resourceName = Statics.resource2;
+                resourceName = Strings.resource2;
                 break;
             case 3:
-                resourceName = Statics.resource3;
+                resourceName = Strings.resource3;
                 break;
         }
         String s = "Faction: " + faction.toString();

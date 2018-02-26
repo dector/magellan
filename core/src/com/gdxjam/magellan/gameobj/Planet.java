@@ -1,6 +1,5 @@
 package com.gdxjam.magellan.gameobj;
 
-import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.Sprite;
@@ -11,7 +10,6 @@ import com.badlogic.gdx.scenes.scene2d.ui.Image;
 import com.badlogic.gdx.scenes.scene2d.ui.Stack;
 import com.badlogic.gdx.utils.OrderedMap;
 import com.gdxjam.magellan.*;
-import com.gdxjam.magellan.screen.BaseScreen;
 import com.gdxjam.magellan.ships.AiShipSettler;
 import com.gdxjam.magellan.ships.PlayerShip;
 import com.gdxjam.magellan.ships.Ship;
@@ -274,21 +272,21 @@ public class Planet extends GameObj implements IDrawableMap, IDestroyable, IInte
         }
 
         if (submenuOpen == "upgrade") {
-            interactions.put("Add 10 " + Statics.resource1, new Interaction() {
+            interactions.put("Add 10 " + Strings.resource1, new Interaction() {
                 @Override
                 public void interact() {
                     addResources(1, MagellanGame.gameState.spendResource(1, 10));
                     showInteractionWindow();
                 }
             });
-            interactions.put("Add 10 " + Statics.resource2, new Interaction() {
+            interactions.put("Add 10 " + Strings.resource2, new Interaction() {
                 @Override
                 public void interact() {
                     addResources(2, MagellanGame.gameState.spendResource(2, 10));
                     showInteractionWindow();
                 }
             });
-            interactions.put("Add 10 " + Statics.resource3, new Interaction() {
+            interactions.put("Add 10 " + Strings.resource3, new Interaction() {
                 @Override
                 public void interact() {
                     addResources(3, MagellanGame.gameState.spendResource(3, 10));
@@ -320,9 +318,9 @@ public class Planet extends GameObj implements IDrawableMap, IDestroyable, IInte
             s += "\nCredits production: " + creditsByTick();
         }
         s += "\n";
-        s += "\n"+ Statics.resource1 + ": " + resource1;
-        s += "\n"+ Statics.resource2 + ": " + resource2;
-        s += "\n"+ Statics.resource3 + ": " + resource3;
+        s += "\n"+ Strings.resource1 + ": " + resource1;
+        s += "\n"+ Strings.resource2 + ": " + resource2;
+        s += "\n"+ Strings.resource3 + ": " + resource3;
         s += "\n";
 
         if (faction == Factions.NEUTRAL || (faction == Factions.PLAYER && population == 0)) {

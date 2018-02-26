@@ -12,7 +12,6 @@ import com.badlogic.gdx.scenes.scene2d.utils.ChangeListener;
 import com.badlogic.gdx.utils.Align;
 import com.gdxjam.magellan.MagellanColors;
 import com.gdxjam.magellan.MagellanGame;
-import com.gdxjam.magellan.Statics;
 
 /**
  * Created by lolcorner on 09.01.2016.
