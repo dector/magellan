@@ -12,6 +12,10 @@ import com.gdxjam.magellan.screen.TitleScreen
 import com.gdxjam.magellan.screen.WindowScreen
 import com.gdxjam.magellan.tweening.ActorAccessor
 import com.gdxjam.magellan.tweening.SpriteAccessor
+import com.gdxjam.magellan.utils.loadMusic
+import com.gdxjam.magellan.utils.loadSkin
+import com.gdxjam.magellan.utils.loadSounds
+import com.gdxjam.magellan.utils.loadTextures
 
 class MagellanGame : Game() {
 
@@ -48,7 +52,7 @@ class MagellanGame : Game() {
         Tween.registerAccessor(Sprite::class.java, SpriteAccessor())
         Tween.registerAccessor(Actor::class.java, ActorAccessor())
 
-        Companion.assets = assets {
+        Companion.assets = com.gdxjam.magellan.utils.assets {
             loadTextures(
                     "pixel.png",
                     "dot.png",

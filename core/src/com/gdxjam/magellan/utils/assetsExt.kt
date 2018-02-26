@@ -1,6 +1,6 @@
 @file:Suppress("NOTHING_TO_INLINE")
 
-package com.gdxjam.magellan
+package com.gdxjam.magellan.utils
 
 import com.badlogic.gdx.assets.AssetManager
 import com.badlogic.gdx.audio.Music
