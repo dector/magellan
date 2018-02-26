@@ -4,12 +4,8 @@ import aurelienribon.tweenengine.Tween
 import com.badlogic.gdx.Game
 import com.badlogic.gdx.Gdx
 import com.badlogic.gdx.assets.AssetManager
-import com.badlogic.gdx.audio.Music
-import com.badlogic.gdx.audio.Sound
-import com.badlogic.gdx.graphics.Texture
 import com.badlogic.gdx.graphics.g2d.Sprite
 import com.badlogic.gdx.scenes.scene2d.Actor
-import com.badlogic.gdx.scenes.scene2d.ui.Skin
 import com.gdxjam.magellan.screen.MapScreen
 import com.gdxjam.magellan.screen.StoryScreen
 import com.gdxjam.magellan.screen.TitleScreen
@@ -31,7 +27,7 @@ class MagellanGame : Game() {
         @JvmField
         var DEBUG = false
     }
-    
+
     @JvmField
     var universe: Universe
 
@@ -52,80 +48,86 @@ class MagellanGame : Game() {
         Tween.registerAccessor(Sprite::class.java, SpriteAccessor())
         Tween.registerAccessor(Actor::class.java, ActorAccessor())
 
-        Companion.assets = AssetManager().apply {
-            loadTexture("pixel.png")
-            loadTexture("dot.png")
-            loadTexture("circle.png")
-            loadTexture("title.png")
-            loadTexture("map_playership.png")
-            loadTexture("map_meteoroids_emptysector.png")
-            loadTexture("map_meteoroids_planetsector.png")
-            loadTexture("map_planet_1.png")
-            loadTexture("map_planet_2.png")
-            loadTexture("map_planet_3.png")
-            loadTexture("map_planet_4.png")
-            loadTexture("map_planet_claimed.png")
-            loadTexture("map_sector.png")
-            loadTexture("map_sector_notvisited.png")
-            loadTexture("map_shop.png")
-            loadTexture("drone.png")
-            loadTexture("drone_gun.png")
-            loadTexture("drone_mine.png")
-            loadTexture("drone_thruster.png")
-            loadTexture("enemy_fighter.png")
-            loadTexture("enemy_transport.png")
-            loadTexture("enemy_drone.png")
-            loadTexture("pirateship.png")
-            loadTexture("shop.png")
-            loadTexture("sectorview_asteroids.png")
-            loadTexture("sectorview_asteroids_resources.png")
-            loadTexture("sectorview_planet_1.png")
-            loadTexture("sectorview_planet_2.png")
-            loadTexture("sectorview_planet_3.png")
-            loadTexture("sectorview_planet_4.png")
-            loadTexture("sectorview_ship.png")
-            loadTexture("sectorview_ship_shield.png")
-            loadTexture("sectorview_drone.png")
-            loadTexture("sectorview_drone_gun.png")
-            loadTexture("sectorview_drone_mine.png")
-            loadTexture("sectorview_drone_thruster.png")
-            loadTexture("sectorview_enemy_fighter.png")
-            loadTexture("sectorview_enemy_transporter.png")
-            loadTexture("bar.png")
-            loadTexture("sectorview_enemy_fighter_shield.png")
-            loadTexture("sectorview_enemy_transporter_shield.png")
-            loadTexture("sectorview_enemy_drone.png")
-            loadTexture("sectorview_pirates.png")
-            loadTexture("sectorview_shop.png")
-            loadTexture("bg.png")
-            loadTexture("topbarBg.png")
+        Companion.assets = assets {
+            loadTextures(
+                    "pixel.png",
+                    "dot.png",
+                    "circle.png",
+                    "title.png",
+                    "map_playership.png",
+                    "map_meteoroids_emptysector.png",
+                    "map_meteoroids_planetsector.png",
+                    "map_planet_1.png",
+                    "map_planet_2.png",
+                    "map_planet_3.png",
+                    "map_planet_4.png",
+                    "map_planet_claimed.png",
+                    "map_sector.png",
+                    "map_sector_notvisited.png",
+                    "map_shop.png",
+                    "drone.png",
+                    "drone_gun.png",
+                    "drone_mine.png",
+                    "drone_thruster.png",
+                    "enemy_fighter.png",
+                    "enemy_transport.png",
+                    "enemy_drone.png",
+                    "pirateship.png",
+                    "shop.png",
+                    "sectorview_asteroids.png",
+                    "sectorview_asteroids_resources.png",
+                    "sectorview_planet_1.png",
+                    "sectorview_planet_2.png",
+                    "sectorview_planet_3.png",
+                    "sectorview_planet_4.png",
+                    "sectorview_ship.png",
+                    "sectorview_ship_shield.png",
+                    "sectorview_drone.png",
+                    "sectorview_drone_gun.png",
+                    "sectorview_drone_mine.png",
+                    "sectorview_drone_thruster.png",
+                    "sectorview_enemy_fighter.png",
+                    "sectorview_enemy_transporter.png",
+                    "bar.png",
+                    "sectorview_enemy_fighter_shield.png",
+                    "sectorview_enemy_transporter_shield.png",
+                    "sectorview_enemy_drone.png",
+                    "sectorview_pirates.png",
+                    "sectorview_shop.png",
+                    "bg.png",
+                    "topbarBg.png"
+            )
 
             loadSkin("skin/uiskin.json")
 
-            loadMusic("bgm0.mp3")
-            loadMusic("bgm1.mp3")
-            loadMusic("bgm2.mp3")
-            loadMusic("bgm3.mp3")
-            loadMusic("battle.mp3")
+            loadMusic(
+                    "bgm0.mp3",
+                    "bgm1.mp3",
+                    "bgm2.mp3",
+                    "bgm3.mp3",
+                    "battle.mp3"
+            )
 
-            loadSound("sounds/buy_sell.mp3")
-            loadSound("sounds/ship_jump_2.mp3")
-            loadSound("sounds/button.mp3")
-            loadSound("sounds/mine.mp3")
-            loadSound("sounds/population.mp3")
-            loadSound("sounds/upgrade.mp3")
-            loadSound("sounds/shield_1.mp3")
-            loadSound("sounds/shield_2.mp3")
-            loadSound("sounds/nope.mp3")
-            loadSound("sounds/doomed.wav")
-            loadSound("sounds/explosion1.wav")
-            loadSound("sounds/explosion2.wav")
-            loadSound("sounds/explosion3.wav")
-            loadSound("sounds/explosion4.wav")
-            loadSound("sounds/weaponfire2.wav")
-            loadSound("sounds/weaponfire3.wav")
-            loadSound("sounds/weaponfire5.wav")
-            loadSound("sounds/weaponfire6.wav")
+            loadSounds(
+                    "sounds/buy_sell.mp3",
+                    "sounds/ship_jump_2.mp3",
+                    "sounds/button.mp3",
+                    "sounds/mine.mp3",
+                    "sounds/population.mp3",
+                    "sounds/upgrade.mp3",
+                    "sounds/shield_1.mp3",
+                    "sounds/shield_2.mp3",
+                    "sounds/nope.mp3",
+                    "sounds/doomed.wav",
+                    "sounds/explosion1.wav",
+                    "sounds/explosion2.wav",
+                    "sounds/explosion3.wav",
+                    "sounds/explosion4.wav",
+                    "sounds/weaponfire2.wav",
+                    "sounds/weaponfire3.wav",
+                    "sounds/weaponfire5.wav",
+                    "sounds/weaponfire6.wav"
+            )
 
             finishLoading()
         }

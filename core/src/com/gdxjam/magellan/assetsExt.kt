@@ -9,7 +9,13 @@ import com.badlogic.gdx.graphics.Texture
 import com.badlogic.gdx.scenes.scene2d.ui.Skin
 
 
-inline fun AssetManager.loadTexture(fileName: String) = load(fileName, Texture::class.java)
-inline fun AssetManager.loadSkin(fileName: String) = load(fileName, Skin::class.java)
-inline fun AssetManager.loadMusic(fileName: String) = load(fileName, Music::class.java)
-inline fun AssetManager.loadSound(fileName: String) = load(fileName, Sound::class.java)
+inline fun AssetManager.loadTexture(file: String) = load(file, Texture::class.java)
+inline fun AssetManager.loadSkin(file: String) = load(file, Skin::class.java)
+inline fun AssetManager.loadMusic(file: String) = load(file, Music::class.java)
+inline fun AssetManager.loadSound(file: String) = load(file, Sound::class.java)
+
+inline fun AssetManager.loadTextures(vararg files: String) = files.forEach(::loadTexture)
+inline fun AssetManager.loadMusic(vararg files: String) = files.forEach(::loadMusic)
+inline fun AssetManager.loadSounds(vararg files: String) = files.forEach(::loadSound)
+
+inline fun assets(init: AssetManager.() -> Unit) = AssetManager().apply(init)
