@@ -8,8 +8,8 @@ import com.badlogic.gdx.scenes.scene2d.ui.TextButton
 import com.badlogic.gdx.scenes.scene2d.ui.VerticalGroup
 import com.badlogic.gdx.scenes.scene2d.utils.ChangeListener
 import com.badlogic.gdx.utils.Align
-import com.gdxjam.magellan.Colors
 import com.gdxjam.magellan.MagellanGame
+import com.gdxjam.magellan.ui.Colors
 import com.gdxjam.magellan.utils.music
 import com.gdxjam.magellan.utils.texture
 

@@ -1,9 +1,10 @@
-package com.gdxjam.magellan
+package com.gdxjam.magellan.models
 
 import com.badlogic.gdx.math.Circle
 import com.badlogic.gdx.math.MathUtils
 import com.badlogic.gdx.math.Rectangle
 import com.badlogic.gdx.utils.Array
+import com.gdxjam.magellan.MagellanGame
 import com.gdxjam.magellan.gameobj.*
 import com.gdxjam.magellan.ships.*
 

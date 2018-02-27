@@ -3,7 +3,7 @@ package com.gdxjam.magellan.drones
 import com.badlogic.gdx.graphics.g2d.Sprite
 import com.badlogic.gdx.utils.Array
 import com.gdxjam.magellan.MagellanGame
-import com.gdxjam.magellan.Sector
+import com.gdxjam.magellan.models.Sector
 import com.gdxjam.magellan.utils.texture
 
 /**

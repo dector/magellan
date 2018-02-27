@@ -15,9 +15,9 @@ import com.badlogic.gdx.scenes.scene2d.*
 import com.badlogic.gdx.scenes.scene2d.ui.*
 import com.badlogic.gdx.scenes.scene2d.utils.ChangeListener
 import com.badlogic.gdx.utils.viewport.FitViewport
-import com.gdxjam.magellan.Colors
 import com.gdxjam.magellan.MagellanGame
-import com.gdxjam.magellan.UiTopbar
+import com.gdxjam.magellan.ui.Colors
+import com.gdxjam.magellan.ui.UiTopbar
 import com.gdxjam.magellan.utils.music
 import com.gdxjam.magellan.utils.skin
 import com.gdxjam.magellan.utils.texture
@@ -313,8 +313,8 @@ open class BaseScreen(@JvmField var game: MagellanGame) : Screen, InputProcessor
         viewport.apply()
     }
 
-    fun renderUi(delta: Float) {
-        topbar.renderBg(delta, batch)
+    fun renderUi() {
+        topbar.renderBg(batch)
 
         stage.draw()
     }

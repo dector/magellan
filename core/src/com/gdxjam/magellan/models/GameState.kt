@@ -1,7 +1,8 @@
-package com.gdxjam.magellan
+package com.gdxjam.magellan.models
 
 import com.badlogic.gdx.math.MathUtils
 import com.badlogic.gdx.utils.Array
+import com.gdxjam.magellan.MagellanGame
 import com.gdxjam.magellan.drones.DroneRoutine
 import com.gdxjam.magellan.gameobj.GameObj
 import com.gdxjam.magellan.gameobj.Planet

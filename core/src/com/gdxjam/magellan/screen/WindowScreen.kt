@@ -14,16 +14,16 @@ import com.badlogic.gdx.scenes.scene2d.ui.*
 import com.badlogic.gdx.scenes.scene2d.utils.ChangeListener
 import com.badlogic.gdx.utils.Array
 import com.badlogic.gdx.utils.Timer
-import com.gdxjam.magellan.Battle
-import com.gdxjam.magellan.Colors
 import com.gdxjam.magellan.MagellanGame
-import com.gdxjam.magellan.Sector
+import com.gdxjam.magellan.battle.Battle
 import com.gdxjam.magellan.drones.Drone
 import com.gdxjam.magellan.gameobj.*
+import com.gdxjam.magellan.models.Sector
 import com.gdxjam.magellan.ships.AiShip
 import com.gdxjam.magellan.ships.PlayerShip
 import com.gdxjam.magellan.shopitem.ScreenShake
 import com.gdxjam.magellan.tweening.ActorAccessor
+import com.gdxjam.magellan.ui.Colors
 import com.gdxjam.magellan.utils.texture
 
 /**
@@ -303,7 +303,7 @@ class WindowScreen(game: MagellanGame) : BaseScreen(game) {
         starfield.draw(batch)
         batch.end()
 
-        renderUi(delta)
+        renderUi()
 
         batch.begin()
         effects?.forEach { pe ->
@@ -368,7 +368,7 @@ class WindowScreen(game: MagellanGame) : BaseScreen(game) {
         stage.addActor(l)
 
         Tween.to(l, ActorAccessor.ALPHA, 0.5f).target(0f).ease(TweenEquations.easeOutCubic).delay(0.5f).start(tweenManager)
-        Tween.to(l, ActorAccessor.POSITION_Y, 1f).target(l.y + 50).ease(TweenEquations.easeInCubic).setCallback { type, source -> l.remove() }.start(tweenManager)
+        Tween.to(l, ActorAccessor.POSITION_Y, 1f).target(l.y + 50).ease(TweenEquations.easeInCubic).setCallback { _, _ -> l.remove() }.start(tweenManager)
 
         effects?.add(pe)
 

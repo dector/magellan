@@ -5,13 +5,13 @@ import com.badlogic.gdx.math.MathUtils
 import com.badlogic.gdx.scenes.scene2d.Actor
 import com.badlogic.gdx.scenes.scene2d.ui.Image
 import com.badlogic.gdx.scenes.scene2d.ui.Stack
-import com.gdxjam.magellan.Battle
 import com.gdxjam.magellan.MagellanGame
-import com.gdxjam.magellan.Sector
+import com.gdxjam.magellan.battle.Battle
 import com.gdxjam.magellan.drones.Drone
 import com.gdxjam.magellan.gameobj.GameObj
 import com.gdxjam.magellan.gameobj.IDestroyable
 import com.gdxjam.magellan.gameobj.Planet
+import com.gdxjam.magellan.models.Sector
 import com.gdxjam.magellan.utils.texture
 
 /**
@@ -100,6 +100,7 @@ class AiShipSettler(sector: Sector) : AiShip(sector) {
         when (state) {
             States.IDLE -> if (Math.random() < .5) super.passiveTick()
             States.FLEEING -> super.passiveTick()
+            else -> {}
         }
     }
 

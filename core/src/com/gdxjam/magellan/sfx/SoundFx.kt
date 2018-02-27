@@ -1,4 +1,4 @@
-package com.gdxjam.magellan
+package com.gdxjam.magellan.sfx
 
 import com.badlogic.gdx.assets.AssetManager
 import com.gdxjam.magellan.utils.sound

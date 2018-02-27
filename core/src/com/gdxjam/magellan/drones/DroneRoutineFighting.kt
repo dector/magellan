@@ -2,8 +2,8 @@ package com.gdxjam.magellan.drones
 
 import com.badlogic.gdx.graphics.g2d.Sprite
 import com.badlogic.gdx.math.MathUtils
-import com.gdxjam.magellan.Battle
 import com.gdxjam.magellan.MagellanGame
+import com.gdxjam.magellan.battle.Battle
 import com.gdxjam.magellan.gameobj.GameObj
 import com.gdxjam.magellan.gameobj.IDestroyable
 import com.gdxjam.magellan.ships.AiShip

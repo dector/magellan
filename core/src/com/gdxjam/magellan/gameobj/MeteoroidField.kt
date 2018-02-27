@@ -7,11 +7,11 @@ import com.badlogic.gdx.math.MathUtils
 import com.badlogic.gdx.scenes.scene2d.ui.Image
 import com.badlogic.gdx.scenes.scene2d.ui.Stack
 import com.badlogic.gdx.utils.OrderedMap
-import com.gdxjam.magellan.Colors
 import com.gdxjam.magellan.MagellanGame
-import com.gdxjam.magellan.Sector
-import com.gdxjam.magellan.Strings
+import com.gdxjam.magellan.models.Sector
 import com.gdxjam.magellan.ships.PlayerShip
+import com.gdxjam.magellan.ui.Colors
+import com.gdxjam.magellan.ui.Strings
 import com.gdxjam.magellan.utils.texture
 
 /**

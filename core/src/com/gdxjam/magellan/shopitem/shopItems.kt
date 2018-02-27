@@ -52,7 +52,6 @@ class ShopItemDroneRoutine(
             DroneRoutine.ROUTINES.ADVSCOUTING -> "This routine offers\na smarter algorithm\nfor scouting."
             DroneRoutine.ROUTINES.FOLLOWING -> "This routine programs\nthe drone to follow\nyour ship."
             DroneRoutine.ROUTINES.REPAIRING -> "This routine programs\nthe drone to repair\nyour ship."
-            else -> ""
         }
     }
 }

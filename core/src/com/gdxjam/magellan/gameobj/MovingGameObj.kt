@@ -7,7 +7,7 @@ import aurelienribon.tweenengine.TweenManager
 import com.badlogic.gdx.graphics.g2d.Sprite
 import com.badlogic.gdx.math.MathUtils
 import com.badlogic.gdx.math.Vector2
-import com.gdxjam.magellan.Sector
+import com.gdxjam.magellan.models.Sector
 import com.gdxjam.magellan.tweening.SpriteAccessor
 
 
@@ -105,7 +105,7 @@ open class MovingGameObj(sector: Sector) : GameObj(sector) {
         val dx = distance * MathUtils.cosDeg(angle)
         val dy = distance * MathUtils.sinDeg(angle)
 
-        parkingPosition = sector.position.cpy().sub(spriteVessel!!.width / 2, spriteVessel!!.height / 2).add(dx, dy)
+        parkingPosition = sector.position.cpy().sub(spriteVessel.width / 2, spriteVessel.height / 2).add(dx, dy)
         parkingAngle = (angle + 90) % 360
     }
 }

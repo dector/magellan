@@ -2,9 +2,9 @@ package com.gdxjam.magellan.ships
 
 import com.badlogic.gdx.graphics.g2d.SpriteBatch
 import com.gdxjam.magellan.MagellanGame
-import com.gdxjam.magellan.Sector
 import com.gdxjam.magellan.gameobj.GameObj
 import com.gdxjam.magellan.gameobj.IDestroyable
+import com.gdxjam.magellan.models.Sector
 
 /**
  * Created by lolcorner on 20.12.2015.

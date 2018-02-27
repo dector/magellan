@@ -11,8 +11,8 @@ import com.badlogic.gdx.scenes.scene2d.utils.ChangeListener
 import com.badlogic.gdx.utils.Array
 import com.badlogic.gdx.utils.OrderedMap
 import com.gdxjam.magellan.MagellanGame
-import com.gdxjam.magellan.Sector
 import com.gdxjam.magellan.drones.DroneRoutine
+import com.gdxjam.magellan.models.Sector
 import com.gdxjam.magellan.shopitem.ShopItem
 import com.gdxjam.magellan.shopitem.ShopItemDrone
 import com.gdxjam.magellan.shopitem.ShopItemDroneRoutine

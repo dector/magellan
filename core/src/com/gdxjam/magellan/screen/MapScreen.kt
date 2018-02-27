@@ -13,10 +13,14 @@ import com.badlogic.gdx.scenes.scene2d.ui.VerticalGroup
 import com.badlogic.gdx.utils.Timer
 import com.badlogic.gdx.utils.viewport.FitViewport
 import com.badlogic.gdx.utils.viewport.Viewport
-import com.gdxjam.magellan.*
+import com.gdxjam.magellan.MagellanGame
 import com.gdxjam.magellan.gameobj.IDrawableMap
+import com.gdxjam.magellan.models.Sector
+import com.gdxjam.magellan.models.Universe
 import com.gdxjam.magellan.ships.AiShipFighter
 import com.gdxjam.magellan.ships.AiShipSettler
+import com.gdxjam.magellan.ui.Colors
+import com.gdxjam.magellan.ui.Log
 
 /**
  * Created by lolcorner on 19.12.2015.
@@ -209,7 +213,7 @@ class MapScreen(game: MagellanGame) : BaseScreen(game) {
             if (sector.visited || MagellanGame.DEBUG) {
                 sector.gameObjs
                         .filterIsInstance<IDrawableMap>()
-                        .forEach { (it as IDrawableMap).renderOnMap(mapBatch, delta) }
+                        .forEach { it.renderOnMap(mapBatch, delta) }
             }
         }
 
@@ -217,7 +221,7 @@ class MapScreen(game: MagellanGame) : BaseScreen(game) {
 
         viewport.apply()
 
-        renderUi(delta)
+        renderUi()
     }
 
     override fun resize(width: Int, height: Int) {

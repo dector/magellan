@@ -11,10 +11,10 @@ import com.badlogic.gdx.scenes.scene2d.ui.List
 import com.badlogic.gdx.scenes.scene2d.utils.ChangeListener
 import com.badlogic.gdx.utils.Array
 import com.badlogic.gdx.utils.OrderedMap
-import com.gdxjam.magellan.Battle
 import com.gdxjam.magellan.MagellanGame
-import com.gdxjam.magellan.Sector
+import com.gdxjam.magellan.battle.Battle
 import com.gdxjam.magellan.gameobj.*
+import com.gdxjam.magellan.models.Sector
 
 /**
  * Created by saibotd on 26.12.15.
@@ -214,7 +214,7 @@ class Drone(sector: Sector, private val maxNumberOfRoutines: Int)
             override fun changed(event: ChangeListener.ChangeEvent, actor: Actor) {
                 val selectedRoutine = listLeft.selected as DroneRoutine.ROUTINES
 
-                if (selectedRoutine == null || selectedRoutines.size >= maxNumberOfRoutines) return
+                if (selectedRoutines.size >= maxNumberOfRoutines) return
                 if (!selectedRoutines.contains(selectedRoutine, false))
                     selectedRoutines.add(selectedRoutine)
 
@@ -224,7 +224,7 @@ class Drone(sector: Sector, private val maxNumberOfRoutines: Int)
 
         removeButton.addListener(object : ChangeListener() {
             override fun changed(event: ChangeListener.ChangeEvent, actor: Actor) {
-                val selectedRoutine = listRight.selected as DroneRoutine.ROUTINES ?: return
+                val selectedRoutine = listRight.selected as DroneRoutine.ROUTINES
 
                 selectedRoutines.removeValue(selectedRoutine, false)
                 updateLists()

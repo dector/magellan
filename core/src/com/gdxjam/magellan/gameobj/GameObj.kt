@@ -1,7 +1,7 @@
 package com.gdxjam.magellan.gameobj
 
 import com.gdxjam.magellan.MagellanGame
-import com.gdxjam.magellan.Sector
+import com.gdxjam.magellan.models.Sector
 
 /**
  * Created by lolcorner on 19.12.2015.

@@ -1,10 +1,12 @@
-package com.gdxjam.magellan
+package com.gdxjam.magellan.ui
 
 import com.badlogic.gdx.scenes.scene2d.Group
 import com.badlogic.gdx.scenes.scene2d.InputEvent
 import com.badlogic.gdx.scenes.scene2d.InputListener
 import com.badlogic.gdx.scenes.scene2d.ui.Label
 import com.badlogic.gdx.utils.Array
+import com.gdxjam.magellan.MagellanGame
+import com.gdxjam.magellan.models.Sector
 
 /**
  * Created by saibotd on 14.01.16.
@@ -48,8 +50,6 @@ class Log(private val target: Group) {
             target.addActor(l)
         }
     }
-
-    fun render(delta: Float) {}
 }
 
 private data class LogEntry(

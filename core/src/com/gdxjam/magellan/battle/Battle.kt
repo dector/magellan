@@ -1,4 +1,4 @@
-package com.gdxjam.magellan
+package com.gdxjam.magellan.battle
 
 import com.badlogic.gdx.Gdx
 import com.badlogic.gdx.audio.Music
@@ -11,6 +11,7 @@ import com.badlogic.gdx.scenes.scene2d.ui.VerticalGroup
 import com.badlogic.gdx.scenes.scene2d.utils.ChangeListener
 import com.badlogic.gdx.utils.Disposable
 import com.badlogic.gdx.utils.Timer
+import com.gdxjam.magellan.MagellanGame
 import com.gdxjam.magellan.gameobj.GameObj
 import com.gdxjam.magellan.gameobj.IArmed
 import com.gdxjam.magellan.gameobj.IDestroyable

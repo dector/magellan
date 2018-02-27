@@ -3,10 +3,10 @@ package com.gdxjam.magellan.ships
 import com.badlogic.gdx.graphics.g2d.SpriteBatch
 import com.badlogic.gdx.scenes.scene2d.Actor
 import com.badlogic.gdx.scenes.scene2d.ui.Image
-import com.gdxjam.magellan.Battle
 import com.gdxjam.magellan.MagellanGame
-import com.gdxjam.magellan.Sector
+import com.gdxjam.magellan.battle.Battle
 import com.gdxjam.magellan.gameobj.*
+import com.gdxjam.magellan.models.Sector
 import com.gdxjam.magellan.utils.texture
 
 /**

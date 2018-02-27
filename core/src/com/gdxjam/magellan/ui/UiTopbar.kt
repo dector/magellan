@@ -1,4 +1,4 @@
-package com.gdxjam.magellan
+package com.gdxjam.magellan.ui
 
 import com.badlogic.gdx.graphics.Color
 import com.badlogic.gdx.graphics.Texture
@@ -7,6 +7,7 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch
 import com.badlogic.gdx.scenes.scene2d.ui.*
 import com.badlogic.gdx.utils.Align
 import com.badlogic.gdx.utils.viewport.FitViewport
+import com.gdxjam.magellan.MagellanGame
 import com.gdxjam.magellan.utils.skin
 import com.gdxjam.magellan.utils.texture
 
@@ -129,7 +130,7 @@ class UiTopbar(var game: MagellanGame, private var table: Table) {
         addActor(valueField)
     }
 
-    fun renderBg(delta: Float, batch: SpriteBatch) {
+    fun renderBg(batch: SpriteBatch) {
         batch.begin()
         topBarBg.draw(batch)
         batch.end()

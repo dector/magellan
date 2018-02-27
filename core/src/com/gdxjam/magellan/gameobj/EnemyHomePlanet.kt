@@ -4,9 +4,9 @@ import com.badlogic.gdx.graphics.Texture
 import com.badlogic.gdx.graphics.g2d.Sprite
 import com.badlogic.gdx.scenes.scene2d.Actor
 import com.badlogic.gdx.scenes.scene2d.ui.Image
-import com.gdxjam.magellan.Colors
 import com.gdxjam.magellan.MagellanGame
-import com.gdxjam.magellan.Sector
+import com.gdxjam.magellan.models.Sector
+import com.gdxjam.magellan.ui.Colors
 import com.gdxjam.magellan.utils.texture
 
 

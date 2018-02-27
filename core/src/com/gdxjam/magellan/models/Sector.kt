@@ -1,4 +1,4 @@
-package com.gdxjam.magellan
+package com.gdxjam.magellan.models
 
 import com.badlogic.gdx.math.Circle
 import com.badlogic.gdx.math.Vector2

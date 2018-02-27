@@ -1,4 +1,4 @@
-package com.gdxjam.magellan
+package com.gdxjam.magellan.ui
 
 import com.gdxjam.magellan.utils.color
 
