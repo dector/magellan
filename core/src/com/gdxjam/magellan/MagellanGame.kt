@@ -2,7 +2,6 @@ package com.gdxjam.magellan
 
 import aurelienribon.tweenengine.Tween
 import com.badlogic.gdx.Game
-import com.badlogic.gdx.Gdx
 import com.badlogic.gdx.assets.AssetManager
 import com.badlogic.gdx.graphics.g2d.Sprite
 import com.badlogic.gdx.scenes.scene2d.Actor
@@ -15,10 +14,7 @@ import com.gdxjam.magellan.screen.WindowScreen
 import com.gdxjam.magellan.sfx.SoundFx
 import com.gdxjam.magellan.tweening.ActorAccessor
 import com.gdxjam.magellan.tweening.SpriteAccessor
-import com.gdxjam.magellan.utils.loadMusic
-import com.gdxjam.magellan.utils.loadSkin
-import com.gdxjam.magellan.utils.loadSounds
-import com.gdxjam.magellan.utils.loadTextures
+import com.gdxjam.magellan.utils.*
 
 class MagellanGame : Game() {
 
@@ -48,9 +44,32 @@ class MagellanGame : Game() {
     }
 
     override fun create() {
+        registerTweenAccessors()
+
+        loadResources()
+        soundFx = SoundFx(assets)
+
+        universe = Universe(this)
+        Companion.gameState = GameState(this)
+
+        titleScreen = TitleScreen(this)
+        mapScreen = MapScreen(this)
+        windowScreen = WindowScreen(this)
+        storyScreen = StoryScreen(this)
+
+        setScreen(titleScreen)
+
+        if (!BuildConstants.Debug) {
+            displayInFullScreenMode()
+        }
+    }
+
+    private fun registerTweenAccessors() {
         Tween.registerAccessor(Sprite::class.java, SpriteAccessor())
         Tween.registerAccessor(Actor::class.java, ActorAccessor())
+    }
 
+    private fun loadResources() {
         Companion.assets = com.gdxjam.magellan.utils.assets {
             loadTextures(
                     "pixel.png",
@@ -133,22 +152,6 @@ class MagellanGame : Game() {
             )
 
             finishLoading()
-        }
-
-        universe = Universe(this)
-        Companion.gameState = GameState(this)
-
-        soundFx = SoundFx(assets)
-
-        titleScreen = TitleScreen(this)
-        mapScreen = MapScreen(this)
-        windowScreen = WindowScreen(this)
-        storyScreen = StoryScreen(this)
-
-        setScreen(titleScreen)
-
-        if (!BuildConstants.Debug) {
-            Gdx.graphics.setDisplayMode(Gdx.graphics.desktopDisplayMode.width, Gdx.graphics.desktopDisplayMode.height, true)
         }
     }
 
