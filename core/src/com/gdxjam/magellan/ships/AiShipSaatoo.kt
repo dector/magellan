@@ -1,6 +1,5 @@
 package com.gdxjam.magellan.ships
 
-import com.badlogic.gdx.graphics.g2d.Sprite
 import com.badlogic.gdx.graphics.g2d.SpriteBatch
 import com.badlogic.gdx.scenes.scene2d.Actor
 import com.badlogic.gdx.scenes.scene2d.ui.Image
@@ -12,6 +11,7 @@ import com.gdxjam.magellan.gameobj.GameObj
 import com.gdxjam.magellan.gameobj.IInteractable
 import com.gdxjam.magellan.models.Sector
 import com.gdxjam.magellan.utils.texture
+import com.gdxjam.magellan.utils.textureSprite
 
 /**
  * Created by lolcorner on 20.12.2015.
@@ -64,7 +64,7 @@ class AiShipSaatoo(sector: Sector) : AiShip(sector), IInteractable {
     override fun prepareRenderingOnMap() {
         super.prepareRenderingOnMap()
 
-        spriteVessel = Sprite(MagellanGame.assets.texture("pirateship.png"))
+        spriteVessel = MagellanGame.assets.textureSprite("pirateship.png")
         spriteVessel.setSize(22f, 22f)
         spriteVessel.setOriginCenter()
 

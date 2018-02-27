@@ -9,7 +9,7 @@ import com.badlogic.gdx.utils.Align
 import com.badlogic.gdx.utils.viewport.FitViewport
 import com.gdxjam.magellan.MagellanGame
 import com.gdxjam.magellan.utils.skin
-import com.gdxjam.magellan.utils.texture
+import com.gdxjam.magellan.utils.textureSprite
 
 /**
  * Created by Felix on 22.12.2015.
@@ -35,7 +35,7 @@ class UiTopbar(var game: MagellanGame, private var table: Table) {
     }
 
     fun createTopBar() {
-        topBarBg = Sprite(MagellanGame.assets.texture("topbarBg.png")).apply {
+        topBarBg = MagellanGame.assets.textureSprite("topbarBg.png").apply {
             setPosition(0f, (720 - 60).toFloat())
             setSize(1280f, 60f)
         }

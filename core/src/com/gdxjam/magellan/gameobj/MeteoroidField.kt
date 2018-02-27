@@ -13,6 +13,7 @@ import com.gdxjam.magellan.ships.PlayerShip
 import com.gdxjam.magellan.ui.Colors
 import com.gdxjam.magellan.ui.Strings
 import com.gdxjam.magellan.utils.texture
+import com.gdxjam.magellan.utils.textureSprite
 
 /**
  * Created by lolcorner on 22.12.2015.
@@ -61,11 +62,11 @@ class MeteoroidField(sector: Sector) : GameObj(sector), IDrawableMap, IDrawableW
 
     override fun prepareRenderingOnMap() {
         mapSprite = if (sector.hasPlanet) {
-            Sprite(MagellanGame.assets.texture("map_meteoroids_planetsector.png")).apply {
+            MagellanGame.assets.textureSprite("map_meteoroids_planetsector.png").apply {
                 setSize(45f, 45f)
             }
         } else {
-            Sprite(MagellanGame.assets.texture("map_meteoroids_emptysector.png")).apply {
+            MagellanGame.assets.textureSprite("map_meteoroids_emptysector.png").apply {
                 setSize(23f, 23f)
             }
         }.apply {

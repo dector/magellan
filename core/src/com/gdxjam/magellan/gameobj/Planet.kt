@@ -16,6 +16,7 @@ import com.gdxjam.magellan.ships.Ship
 import com.gdxjam.magellan.ui.Colors
 import com.gdxjam.magellan.ui.Strings
 import com.gdxjam.magellan.utils.texture
+import com.gdxjam.magellan.utils.textureSprite
 
 
 /**
@@ -105,12 +106,12 @@ open class Planet(sector: Sector) : GameObj(sector), IDrawableMap, IDestroyable,
         }.toString()
 
     override fun prepareRenderingOnMap() {
-        mapSprite = Sprite(MagellanGame.assets.texture("map_planet_$visualType.png")).apply {
+        mapSprite = MagellanGame.assets.textureSprite("map_planet_$visualType.png").apply {
             color = this@Planet.color
             setSize(30f, 30f)
         }
 
-        mapClaimedSprite = Sprite(MagellanGame.assets.texture("map_planet_claimed.png")).apply {
+        mapClaimedSprite = MagellanGame.assets.textureSprite("map_planet_claimed.png").apply {
             setSize(15f, 20f)
         }
     }

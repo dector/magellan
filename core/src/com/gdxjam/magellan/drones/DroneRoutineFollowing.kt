@@ -1,8 +1,7 @@
 package com.gdxjam.magellan.drones
 
-import com.badlogic.gdx.graphics.g2d.Sprite
 import com.gdxjam.magellan.MagellanGame
-import com.gdxjam.magellan.utils.texture
+import com.gdxjam.magellan.utils.textureSprite
 
 /**
  * Created by saibotd on 27.12.15.
@@ -11,8 +10,8 @@ class DroneRoutineFollowing(drone: Drone) : DroneRoutine(drone) {
 
     init {
         routine = DroneRoutine.ROUTINES.FOLLOWING
-        sprite = Sprite(MagellanGame.assets.texture("drone_thruster.png"))
-        windowSprite = Sprite(MagellanGame.assets.texture("sectorview_drone_thruster.png"))
+        sprite = MagellanGame.assets.textureSprite("drone_thruster.png")
+        windowSprite = MagellanGame.assets.textureSprite("sectorview_drone_thruster.png")
     }
 
     override fun tick() {

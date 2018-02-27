@@ -11,7 +11,7 @@ import com.badlogic.gdx.utils.Align
 import com.gdxjam.magellan.MagellanGame
 import com.gdxjam.magellan.ui.Colors
 import com.gdxjam.magellan.utils.music
-import com.gdxjam.magellan.utils.texture
+import com.gdxjam.magellan.utils.textureSprite
 
 /**
  * Created by lolcorner on 09.01.2016.
@@ -25,12 +25,12 @@ class TitleScreen(game: MagellanGame) : BaseScreen(game) {
         stage.clear()
         createStarfield()
 
-        bg = Sprite(MagellanGame.assets.texture("sectorview_planet_" + MathUtils.random(1, 4) + ".png"))
+        bg = MagellanGame.assets.textureSprite("sectorview_planet_" + MathUtils.random(1, 4) + ".png")
         bg.setSize(600f, 600f)
         bg.color = Colors.PLANET_2
         bg.setPosition(1280 - bg.width, 720 - bg.height)
 
-        title = Sprite(MagellanGame.assets.texture("title.png"))
+        title = MagellanGame.assets.textureSprite("title.png")
         title.setSize(721 * 0.7f, 317 * .7f)
         title.setPosition((1280 - title.width) / 2, 350f)
 

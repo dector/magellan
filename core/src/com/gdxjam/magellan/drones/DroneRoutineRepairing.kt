@@ -1,18 +1,17 @@
 package com.gdxjam.magellan.drones
 
-import com.badlogic.gdx.graphics.g2d.Sprite
 import com.gdxjam.magellan.MagellanGame
-import com.gdxjam.magellan.utils.texture
+import com.gdxjam.magellan.utils.textureSprite
 
 /**
  * Created by saibotd on 27.12.15.
  */
-class DroneRoutineReparing(drone: Drone) : DroneRoutine(drone) {
+class DroneRoutineRepairing(drone: Drone) : DroneRoutine(drone) {
 
     init {
         routine = DroneRoutine.ROUTINES.REPAIRING
-        sprite = Sprite(MagellanGame.assets.texture("drone_mine.png"))
-        windowSprite = Sprite(MagellanGame.assets.texture("sectorview_drone_mine.png"))
+        sprite = MagellanGame.assets.textureSprite("drone_mine.png")
+        windowSprite = MagellanGame.assets.textureSprite("sectorview_drone_mine.png")
     }
 
     override fun tick() {

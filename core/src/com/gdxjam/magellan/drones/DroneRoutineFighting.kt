@@ -1,13 +1,12 @@
 package com.gdxjam.magellan.drones
 
-import com.badlogic.gdx.graphics.g2d.Sprite
 import com.badlogic.gdx.math.MathUtils
 import com.gdxjam.magellan.MagellanGame
 import com.gdxjam.magellan.battle.Battle
 import com.gdxjam.magellan.gameobj.GameObj
 import com.gdxjam.magellan.gameobj.IDestroyable
 import com.gdxjam.magellan.ships.AiShip
-import com.gdxjam.magellan.utils.texture
+import com.gdxjam.magellan.utils.textureSprite
 
 /**
  * Created by saibotd on 27.12.15.
@@ -19,8 +18,8 @@ class DroneRoutineFighting(
 
     init {
         routine = DroneRoutine.ROUTINES.ATTACKING
-        sprite = Sprite(MagellanGame.assets.texture("drone_gun.png"))
-        windowSprite = Sprite(MagellanGame.assets.texture("sectorview_drone_gun.png"))
+        sprite = MagellanGame.assets.textureSprite("drone_gun.png")
+        windowSprite = MagellanGame.assets.textureSprite("sectorview_drone_gun.png")
     }
 
     override fun tick() {

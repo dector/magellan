@@ -3,7 +3,6 @@ package com.gdxjam.magellan.ships
 import com.badlogic.gdx.Gdx
 import com.badlogic.gdx.graphics.Texture
 import com.badlogic.gdx.graphics.g2d.ParticleEffect
-import com.badlogic.gdx.graphics.g2d.Sprite
 import com.badlogic.gdx.graphics.g2d.SpriteBatch
 import com.badlogic.gdx.math.MathUtils
 import com.badlogic.gdx.scenes.scene2d.Actor
@@ -18,7 +17,7 @@ import com.gdxjam.magellan.gameobj.IDestroyable
 import com.gdxjam.magellan.gameobj.IInteractable
 import com.gdxjam.magellan.models.Sector
 import com.gdxjam.magellan.shopitem.ShopItem
-import com.gdxjam.magellan.utils.texture
+import com.gdxjam.magellan.utils.textureSprite
 
 /**
  * Created by lolcorner on 20.12.2015.
@@ -117,7 +116,7 @@ class PlayerShip(sector: Sector) : Ship(sector), IInteractable {
     override fun prepareRenderingOnMap() {
         super.prepareRenderingOnMap()
 
-        spriteVessel = Sprite(MagellanGame.assets.texture("map_playership.png"))
+        spriteVessel = MagellanGame.assets.textureSprite("map_playership.png")
         spriteVessel.setSize(20f, 20f)
         spriteVessel.setOriginCenter()
 

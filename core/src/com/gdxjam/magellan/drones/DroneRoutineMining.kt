@@ -1,11 +1,10 @@
 package com.gdxjam.magellan.drones
 
-import com.badlogic.gdx.graphics.g2d.Sprite
 import com.badlogic.gdx.utils.Array
 import com.gdxjam.magellan.MagellanGame
 import com.gdxjam.magellan.gameobj.GameObj
 import com.gdxjam.magellan.gameobj.MeteoroidField
-import com.gdxjam.magellan.utils.texture
+import com.gdxjam.magellan.utils.textureSprite
 
 /**
  * Created by saibotd on 27.12.15.
@@ -17,8 +16,8 @@ class DroneRoutineMining(drone: Drone) : DroneRoutine(drone) {
 
     init {
         routine = DroneRoutine.ROUTINES.MINING
-        sprite = Sprite(MagellanGame.assets.texture("drone_mine.png"))
-        windowSprite = Sprite(MagellanGame.assets.texture("sectorview_drone_mine.png"))
+        sprite = MagellanGame.assets.textureSprite("drone_mine.png")
+        windowSprite = MagellanGame.assets.textureSprite("sectorview_drone_mine.png")
     }
 
     override fun tick() {

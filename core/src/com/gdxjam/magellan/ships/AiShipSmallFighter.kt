@@ -1,6 +1,5 @@
 package com.gdxjam.magellan.ships
 
-import com.badlogic.gdx.graphics.g2d.Sprite
 import com.badlogic.gdx.scenes.scene2d.Actor
 import com.badlogic.gdx.scenes.scene2d.ui.Image
 import com.badlogic.gdx.scenes.scene2d.ui.Stack
@@ -12,6 +11,7 @@ import com.gdxjam.magellan.gameobj.IDestroyable
 import com.gdxjam.magellan.gameobj.Planet
 import com.gdxjam.magellan.models.Sector
 import com.gdxjam.magellan.utils.texture
+import com.gdxjam.magellan.utils.textureSprite
 
 /**
  * Created by lolcorner on 20.12.2015.
@@ -43,7 +43,7 @@ class AiShipSmallFighter(sector: Sector) : AiShip(sector) {
     override fun prepareRenderingOnMap() {
         super.prepareRenderingOnMap()
 
-        spriteVessel = Sprite(MagellanGame.assets.texture("enemy_drone.png"))
+        spriteVessel = MagellanGame.assets.textureSprite("enemy_drone.png")
         spriteVessel.setSize(6f, 8f)
         spriteVessel.setOriginCenter()
 

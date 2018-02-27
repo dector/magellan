@@ -245,7 +245,7 @@ class Drone(sector: Sector, private val maxNumberOfRoutines: Int)
                         DroneRoutine.ROUTINES.ADVSCOUTING -> addRoutine(DroneRoutineScoutingAdvanced(drone))
                         DroneRoutine.ROUTINES.MINING -> addRoutine(DroneRoutineMining(drone))
                         DroneRoutine.ROUTINES.FOLLOWING -> addRoutine(DroneRoutineFollowing(drone))
-                        DroneRoutine.ROUTINES.REPAIRING -> addRoutine(DroneRoutineReparing(drone))
+                        DroneRoutine.ROUTINES.REPAIRING -> addRoutine(DroneRoutineRepairing(drone))
                     }
                 }
 
