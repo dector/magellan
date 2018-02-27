@@ -22,6 +22,10 @@ open class Planet(sector: Sector) : GameObj(sector), IDrawableMap, IDestroyable,
     lateinit var mapSprite: Sprite
     lateinit var mapClaimedSprite: Sprite
 
+    override val health: Int
+        get() = population
+    override val shield = 0f
+
     @JvmField
     var population = 0
 
@@ -140,14 +144,6 @@ open class Planet(sector: Sector) : GameObj(sector), IDrawableMap, IDestroyable,
     override fun destroy() {}
 
     override fun dispose() {}
-
-    override fun getHealth(): Int {
-        return population
-    }
-
-    override fun getShield(): Float {
-        return 0f
-    }
 
     override fun inBattle(): Boolean {
         return false

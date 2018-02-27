@@ -12,15 +12,15 @@ import com.gdxjam.magellan.Battle
  */
 
 interface IArmed {
-    fun getAttack(): Int
+    val attack: Int
 
     fun shootAt(target: IDestroyable): Int
 }
 
 interface IDestroyable : Disposable {
     val isAlive: Boolean
-    fun getHealth(): Int
-    fun getShield(): Float
+    val health: Int
+    val shield: Float
 
     fun receiveDamage(damage: Int): Boolean
     fun destroy()

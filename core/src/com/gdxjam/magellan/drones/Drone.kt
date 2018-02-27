@@ -22,7 +22,9 @@ import com.gdxjam.magellan.gameobj.*
 class Drone(sector: Sector, private val maxNumberOfRoutines: Int)
     : MovingGameObj(sector), IDestroyable, IDrawableMap, IInteractable, IArmed {
 
-    private var health = 4 * maxNumberOfRoutines
+    override var health = 4 * maxNumberOfRoutines
+    override val shield = 0f
+
     private val routines = Array<DroneRoutine>()
     var dimensions = Vector2(280f, 170f)
     var dimensionsWindow = Vector2(250f, 170f)
@@ -32,6 +34,11 @@ class Drone(sector: Sector, private val maxNumberOfRoutines: Int)
     private lateinit var listLeft: List<DroneRoutine.ROUTINES?>
     var destroyed: Boolean = false
     private var battle: Battle? = null
+
+    override val attack: Int
+        get() = routines
+                .filterIsInstance<DroneRoutineFighting>()
+                .sumBy { it.getAttack() }
 
     override val isAlive: Boolean
         get() = health > 0
@@ -122,10 +129,6 @@ class Drone(sector: Sector, private val maxNumberOfRoutines: Int)
     override fun dispose() {
         this.sector.gameObjs.removeValue(this, true)
     }
-
-    override fun getHealth() = health
-
-    override fun getShield() = 0f
 
     override fun inBattle() = battle != null
 
@@ -299,13 +302,9 @@ class Drone(sector: Sector, private val maxNumberOfRoutines: Int)
     }
 
     override fun shootAt(target: IDestroyable): Int {
-        target.receiveDamage(getAttack())
-        return getAttack()
+        target.receiveDamage(attack)
+        return attack
     }
-
-    override fun getAttack() = routines
-            .filterIsInstance<DroneRoutineFighting>()
-            .sumBy { it.getAttack() }
 
     private fun hasRoutine(routineClass: Class<*>): Boolean {
         return routines.any { it.javaClass == routineClass }

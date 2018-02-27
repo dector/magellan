@@ -84,7 +84,7 @@ class Battle(
 
         if (isPlayerBattle) {
             screen.closeWindow()
-            if ((offensive as IArmed).getAttack() > 1) {
+            if ((offensive as IArmed).attack > 1) {
                 MagellanGame.soundFx.weaponFire.random().play(0.8f, 1f, panShoot)
             } else {
                 MagellanGame.soundFx.weaponFireSmall.random().play(0.8f, 1f, panShoot)
@@ -101,7 +101,7 @@ class Battle(
                     damageDone += i
 
                     Gdx.app.log("BATTLE", offensive!!.toString() + " ATTACKS FOR " + i)
-                    Gdx.app.log("BATTLE", defensive!!.toString() + " HEALTH AT " + defensive!!.getHealth())
+                    Gdx.app.log("BATTLE", defensive!!.toString() + " HEALTH AT " + defensive!!.health)
 
                     if (defensive is PlayerShip) {
                         MagellanGame.instance.windowScreen.shake(i)
@@ -123,7 +123,7 @@ class Battle(
             damageDone += i
 
             Gdx.app.log("BATTLE", offensive!!.toString() + " ATTACKS FOR " + i)
-            Gdx.app.log("BATTLE", defensive!!.toString() + " HEALTH AT " + defensive!!.getHealth())
+            Gdx.app.log("BATTLE", defensive!!.toString() + " HEALTH AT " + defensive!!.health)
         }
 
         if (isPlayerBattle) {
@@ -195,15 +195,15 @@ class Battle(
         menu.space(6f)
         menu.fill()
 
-        var textLeft = "Your ship\nHealth: " + offensive!!.getHealth()
-        textLeft += "\nShield: " + Math.round(offensive!!.getShield() * 100) + "%"
-        textLeft += "\nAttack: " + (offensive as IArmed).getAttack()
+        var textLeft = "Your ship\nHealth: " + offensive!!.health
+        textLeft += "\nShield: " + Math.round(offensive!!.shield * 100) + "%"
+        textLeft += "\nAttack: " + (offensive as IArmed).attack
 
-        var textRight = "Enemy\nHealth: " + defensive!!.getHealth()
-        textRight += "\nShield: " + Math.round(defensive!!.getShield() * 100) + "%"
+        var textRight = "Enemy\nHealth: " + defensive!!.health
+        textRight += "\nShield: " + Math.round(defensive!!.shield * 100) + "%"
 
         if (defensive is IArmed)
-            textRight += "\nAttack: " + (defensive as IArmed).getAttack()
+            textRight += "\nAttack: " + (defensive as IArmed).attack
 
         info.addActor(Label(textLeft, screen.skin, "window"))
         info.addActor(Label(textRight, screen.skin, "window"))
