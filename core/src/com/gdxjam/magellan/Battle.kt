@@ -108,10 +108,10 @@ class Battle(
                     }
 
                     if (i == -1) {
-                        MagellanGame.instance.windowScreen.showShield(defensive)
+                        MagellanGame.instance.windowScreen.showShield(defensive as IDestroyable)
                         MagellanGame.soundFx.shield.random().play(0.7f, 1f, panImpact)
                     } else {
-                        MagellanGame.instance.windowScreen.showDamage(defensive, i)
+                        MagellanGame.instance.windowScreen.showDamage(defensive as IDestroyable, i)
                         MagellanGame.soundFx.explosions.random().play(1f, 1f, panImpact)
                     }
                 }
@@ -138,8 +138,10 @@ class Battle(
 
                         if (offensive is PlayerShip) {
                             Gdx.app.log("HERE", "HERE")
+
                             screen.closeWindow()
                             playerTurn()
+
                             return
                         } else
                             turn()
