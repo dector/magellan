@@ -106,16 +106,7 @@ class MapScreen(game: MagellanGame) : BaseScreen(game) {
         Timer.schedule(object : Timer.Task() {
 
             override fun run() {
-                MagellanGame.instance.mapScreen.log.addEntry("")
-                MagellanGame.instance.mapScreen.log.addEntry("")
-                MagellanGame.instance.mapScreen.log.addEntry("")
-                MagellanGame.instance.mapScreen.log.addEntry("")
-                MagellanGame.instance.mapScreen.log.addEntry("")
-                MagellanGame.instance.mapScreen.log.addEntry("")
-                MagellanGame.instance.mapScreen.log.addEntry("")
-                MagellanGame.instance.mapScreen.log.addEntry("")
-                MagellanGame.instance.mapScreen.log.addEntry("")
-                MagellanGame.instance.mapScreen.log.addEntry("")
+                MagellanGame.instance.mapScreen.log.init()
             }
         }, 1f)
 

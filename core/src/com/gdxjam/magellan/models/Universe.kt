@@ -87,6 +87,8 @@ class Universe(private val game: MagellanGame) {
     fun tick() {
         MagellanGame.gameState.progressYear()
 
+        game.mapScreen.log.tick()
+
         val gameObjs = Array<GameObj>()
 
         for (i in 0 until sectors.size) {
@@ -119,7 +121,6 @@ class Universe(private val game: MagellanGame) {
             MagellanGame.instance.showTitleScreen()
             MagellanGame.instance.restartGame()
         }
-
     }
 
     private fun addRandomSector() {

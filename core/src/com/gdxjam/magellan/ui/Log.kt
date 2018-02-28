@@ -13,24 +13,42 @@ import com.gdxjam.magellan.models.Sector
  */
 class Log(private val target: Group) {
 
-    private val log = Array<LogEntry>()
+    private val log = Array<LogEntry>(10).apply {
+        (0 until size)
+                .forEach { index -> set(index, LogEntry("")) }
+    }
 
-    fun addEntry(s: String) {
-        log.insert(0, LogEntry.from(s))
+    fun init() {
+        update()
+    }
+
+    fun tick() {
+        log.filter { it.justAdded }.forEachIndexed { index, entry ->
+            log.set(index, entry.copy(justAdded = false))
+        }
         update()
     }
 
     fun addEntry(s: String, sector: Sector) {
-        log.insert(0, LogEntry.from(s, sector))
+        val text = if (s == "") "" else "${MagellanGame.gameState.year} $s"
+
+        log.insert(0, LogEntry(text = text, sector = sector, justAdded = true))
         update()
     }
 
-    fun update() {
+    private fun update() {
         target.clear()
 
         log.forEach { entry ->
-            val l = Label(entry.text, MagellanGame.instance.mapScreen.skin)
-                    .apply { setWrap(true) }
+            val l = Label(entry.text, MagellanGame.instance.mapScreen.skin).apply {
+                setWrap(true)
+
+                if (entry.justAdded) {
+                    val newStyle = Label.LabelStyle(style)
+                    newStyle.fontColor = Colors.LOG_ENTRY_JUST_ADDED
+                    style = newStyle
+                }
+            }
 
             entry.sector?.let { sector ->
                 l.addListener(object : InputListener() {
@@ -54,14 +72,5 @@ class Log(private val target: Group) {
 
 private data class LogEntry(
         val text: String,
-        val sector: Sector? = null
-) {
-
-    companion object {
-
-        fun from(text: String, sector: Sector? = null) = LogEntry(
-                text = if (text == "") "" else "${MagellanGame.gameState.year} $text",
-                sector = sector
-        )
-    }
-}
+        val sector: Sector? = null,
+        val justAdded: Boolean = false)
