@@ -144,8 +144,10 @@ open class BaseScreen(@JvmField var game: MagellanGame) : Screen, InputProcessor
 
     override fun keyDown(keycode: Int): Boolean {
         when (keycode) {
-            Input.Keys.Z -> MagellanGame.DEBUG = !MagellanGame.DEBUG
-            Input.Keys.ESCAPE -> if (BuildConfig.DevMode) Gdx.app.exit()
+            Input.Keys.Z ->
+                if (BuildConfig.DevMode) game.toggleFogOfWar()
+            Input.Keys.ESCAPE ->
+                if (BuildConfig.DevMode) Gdx.app.exit()
         }
         return false
     }

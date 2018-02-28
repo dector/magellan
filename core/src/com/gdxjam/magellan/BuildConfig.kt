@@ -4,7 +4,7 @@ object BuildConfig {
 
     const val DevMode = true
 
-    val DontDisplayTutorial = on(false)
+    val DontDisplayTutorial = on(true)
 }
 
 @Suppress("NOTHING_TO_INLINE")

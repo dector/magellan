@@ -27,8 +27,7 @@ class MagellanGame : Game() {
         lateinit var assets: AssetManager
         lateinit var soundFx: SoundFx
 
-        @JvmField
-        var DEBUG = false
+        var DISPLAY_FOG_OF_WAR = false
     }
 
     lateinit var universe: Universe
@@ -180,5 +179,9 @@ class MagellanGame : Game() {
 
         mapScreen = MapScreen(this)
         windowScreen = WindowScreen(this)
+    }
+
+    fun toggleFogOfWar() {
+        DISPLAY_FOG_OF_WAR = DISPLAY_FOG_OF_WAR.not()
     }
 }

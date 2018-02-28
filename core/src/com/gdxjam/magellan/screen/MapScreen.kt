@@ -182,7 +182,7 @@ class MapScreen(game: MagellanGame) : BaseScreen(game) {
         mapBatch.begin()
 
         for (sector in universe.getSectorsInRectangle(cameraFrame)) {
-            if (!sector.visited && !MagellanGame.DEBUG) continue
+            if (!sector.visited && !MagellanGame.DISPLAY_FOG_OF_WAR) continue
 
             sector.connectedSectors.forEach { _sector ->
                 tmp1 = sector.position.cpy().sub(_sector.position)
@@ -206,7 +206,7 @@ class MapScreen(game: MagellanGame) : BaseScreen(game) {
         }
 
         universe.getSectorsInRectangle(cameraFrame).forEach { sector ->
-            if (!sector.discovered && !MagellanGame.DEBUG) return@forEach
+            if (!sector.discovered && !MagellanGame.DISPLAY_FOG_OF_WAR) return@forEach
 
             if (sector.visited) {
                 sectorNormal.setPosition(sector.position.x - sectorNormal.width / 2, sector.position.y - sectorNormal.height / 2)
@@ -217,7 +217,7 @@ class MapScreen(game: MagellanGame) : BaseScreen(game) {
             }
 
             // Fog of war disabled for debugging
-            if (sector.visited || MagellanGame.DEBUG) {
+            if (sector.visited || MagellanGame.DISPLAY_FOG_OF_WAR) {
                 sector.gameObjs
                         .filterIsInstance<IDrawableMap>()
                         .forEach { it.renderOnMap(mapBatch, delta) }
@@ -256,15 +256,16 @@ class MapScreen(game: MagellanGame) : BaseScreen(game) {
             Input.Keys.A -> keyboardPanX = 0f
             Input.Keys.S -> keyboardPanY = 0f
             Input.Keys.D -> keyboardPanX = 0f
-            Input.Keys.K -> {
+
+            Input.Keys.K -> if (BuildConfig.DevMode) {
                 val ship = AiShipFighter(universe.playerShip.sector)
                 ship.prepareRenderingOnMap()
             }
-            Input.Keys.J -> {
+            Input.Keys.J -> if (BuildConfig.DevMode) {
                 val ship2 = AiShipSettler(universe.playerShip.sector)
                 ship2.prepareRenderingOnMap()
             }
-            Input.Keys.L -> {
+            Input.Keys.L -> if (BuildConfig.DevMode) {
                 MagellanGame.gameState.credits += 100000
                 MagellanGame.gameState.resource1 += 1000
                 MagellanGame.gameState.resource2 += 1000
