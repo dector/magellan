@@ -59,7 +59,7 @@ class MagellanGame : Game() {
 
         setScreen(titleScreen)
 
-        if (!BuildConstants.DevMode) {
+        if (!BuildConfig.DevMode) {
             displayInFullScreenMode()
         }
     }

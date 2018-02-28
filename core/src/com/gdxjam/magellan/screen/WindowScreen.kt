@@ -14,6 +14,7 @@ import com.badlogic.gdx.scenes.scene2d.ui.*
 import com.badlogic.gdx.scenes.scene2d.utils.ChangeListener
 import com.badlogic.gdx.utils.Array
 import com.badlogic.gdx.utils.Timer
+import com.gdxjam.magellan.BuildConfig
 import com.gdxjam.magellan.MagellanGame
 import com.gdxjam.magellan.battle.Battle
 import com.gdxjam.magellan.drones.Drone
@@ -42,6 +43,7 @@ class WindowScreen(game: MagellanGame) : BaseScreen(game) {
     private val spBar: Sprite
     private var lastShownSector: Sector? = null
     private var effects: Array<ParticleEffect>? = null
+
     private var startTutorialShown = false
 
     init {
@@ -140,12 +142,19 @@ class WindowScreen(game: MagellanGame) : BaseScreen(game) {
 
         lastShownSector = game.universe.playerShip.sector
 
-        if (!startTutorialShown) {
-            startTutorialShown = true
-            getWindow("Info", "Click on your ship to see it's stats.\nClick on the shop to interact with it.\nClick 'Star Map' to see your surroundings.")
-        }
+        displayTutorialIfNeeded()
     }
 
+    private fun displayTutorialIfNeeded() {
+        if (BuildConfig.DontDisplayTutorial) return
+        if (startTutorialShown) return
+
+        startTutorialShown = true
+        getWindow("Info", """
+                    Click on your ship to see it's stats.
+                    Click on the shop to interact with it.
+                    Click 'Star Map' to see your surroundings.""".trimIndent())
+    }
 
     fun drawSurroundings() {
         dronesOnScreen.clear()

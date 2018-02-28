@@ -15,6 +15,7 @@ import com.badlogic.gdx.scenes.scene2d.*
 import com.badlogic.gdx.scenes.scene2d.ui.*
 import com.badlogic.gdx.scenes.scene2d.utils.ChangeListener
 import com.badlogic.gdx.utils.viewport.FitViewport
+import com.gdxjam.magellan.BuildConfig
 import com.gdxjam.magellan.MagellanGame
 import com.gdxjam.magellan.ui.Colors
 import com.gdxjam.magellan.ui.UiTopbar
@@ -144,7 +145,7 @@ open class BaseScreen(@JvmField var game: MagellanGame) : Screen, InputProcessor
     override fun keyDown(keycode: Int): Boolean {
         when (keycode) {
             Input.Keys.Z -> MagellanGame.DEBUG = !MagellanGame.DEBUG
-            Input.Keys.ESCAPE -> if (MagellanGame.DEBUG) Gdx.app.exit()
+            Input.Keys.ESCAPE -> if (BuildConfig.DevMode) Gdx.app.exit()
         }
         return false
     }
@@ -190,7 +191,6 @@ open class BaseScreen(@JvmField var game: MagellanGame) : Screen, InputProcessor
         batch.end()
     }
 
-    @JvmOverloads
     fun getWindow(title: String, message: String? = null): Window {
         windowContainer.clear()
 

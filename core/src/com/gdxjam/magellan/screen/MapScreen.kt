@@ -13,6 +13,7 @@ import com.badlogic.gdx.scenes.scene2d.ui.VerticalGroup
 import com.badlogic.gdx.utils.Timer
 import com.badlogic.gdx.utils.viewport.FitViewport
 import com.badlogic.gdx.utils.viewport.Viewport
+import com.gdxjam.magellan.BuildConfig
 import com.gdxjam.magellan.MagellanGame
 import com.gdxjam.magellan.gameobj.IDrawableMap
 import com.gdxjam.magellan.models.Sector
@@ -59,6 +60,7 @@ class MapScreen(game: MagellanGame) : BaseScreen(game) {
     private val starfieldScroll = Vector2()
     internal var lineWidth = 2f
     private var sectorToFocusOn: Sector? = null
+
     private var startTutorialShown = false
 
     init {
@@ -125,10 +127,17 @@ class MapScreen(game: MagellanGame) : BaseScreen(game) {
     override fun show() {
         super.show()
 
-        if (!startTutorialShown) {
-            startTutorialShown = true
-            getWindow("Info", "Here you can jump to other sectors.\nJust click on a connected sector to try it out!")
-        }
+        displayTutorialIfNeeded()
+    }
+
+    private fun displayTutorialIfNeeded() {
+        if (BuildConfig.DontDisplayTutorial) return
+        if (startTutorialShown) return
+
+        startTutorialShown = true
+        getWindow("Info", """
+            Here you can jump to other sectors.
+            Just click on a connected sector to try it out!""".trimIndent())
     }
 
     override fun render(delta: Float) {
