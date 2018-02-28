@@ -2,5 +2,5 @@ package com.gdxjam.magellan
 
 object BuildConstants {
 
-    const val Debug = true
+    const val DevMode = true
 }
