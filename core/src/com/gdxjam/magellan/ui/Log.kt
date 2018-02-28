@@ -7,6 +7,7 @@ import com.badlogic.gdx.scenes.scene2d.ui.Label
 import com.badlogic.gdx.utils.Array
 import com.gdxjam.magellan.MagellanGame
 import com.gdxjam.magellan.models.Sector
+import com.gdxjam.magellan.utils.updateLocalStyle
 
 /**
  * Created by saibotd on 14.01.16.
@@ -44,9 +45,9 @@ class Log(private val target: Group) {
                 setWrap(true)
 
                 if (entry.justAdded) {
-                    val newStyle = Label.LabelStyle(style)
-                    newStyle.fontColor = Colors.LOG_ENTRY_JUST_ADDED
-                    style = newStyle
+                    updateLocalStyle {
+                        it.fontColor = Colors.LOG_ENTRY_JUST_ADDED
+                    }
                 }
             }
 
