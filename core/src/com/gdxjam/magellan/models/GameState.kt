@@ -12,34 +12,30 @@ import com.gdxjam.magellan.gameobj.Planet
  */
 data class GameState(private val game: MagellanGame) {
 
-    @JvmField
     var drones = 0
-    @JvmField
+
     var resource1 = 0
-    @JvmField
     var resource2 = 0
-    @JvmField
     var resource3 = 0
-    @JvmField
+
     var credits = 0
-    @JvmField
     var credits_per_tick = 0
-    @JvmField
+
     var year = 3056
-    @JvmField
     var yearsPassed = 0
-    @JvmField
+
     var population = 0
-    @JvmField
     var aiHostility = 0
-    @JvmField
+
     var unlockedRoutines = Array<DroneRoutine.ROUTINES>().apply {
         add(DroneRoutine.ROUTINES.MINING)
         add(DroneRoutine.ROUTINES.SCOUTING)
         add(DroneRoutine.ROUTINES.REPAIRING)
     }
-    @JvmField
-    var droneInfoShown = false
+
+    var mapTutorialShown = false
+    var startTutorialShown = false
+    var droneTutorialShown = false
 
     fun progressYear() {
         year++

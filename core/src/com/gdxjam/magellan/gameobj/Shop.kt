@@ -10,6 +10,7 @@ import com.badlogic.gdx.scenes.scene2d.ui.List
 import com.badlogic.gdx.scenes.scene2d.utils.ChangeListener
 import com.badlogic.gdx.utils.Array
 import com.badlogic.gdx.utils.OrderedMap
+import com.gdxjam.magellan.BuildConfig
 import com.gdxjam.magellan.MagellanGame
 import com.gdxjam.magellan.drones.DroneRoutine
 import com.gdxjam.magellan.models.Sector
@@ -27,8 +28,10 @@ class Shop(sector: Sector) : MovingGameObj(sector), IDrawableWindow, IDrawableMa
     private val inventory = Array<ShopItem>()
     private lateinit var _info: Label
     private var lastSelectedIndex = -1
+
     private var droneBought = false
 
+    override val title = "Trading Post"
     override val info: String
         get() = StringBuilder().apply {
             appendln("INTERCOM: Hello good friend! We have drones, upgrades,\nanything you need!\nIf you have the credits, that is.")
@@ -43,8 +46,6 @@ class Shop(sector: Sector) : MovingGameObj(sector), IDrawableWindow, IDrawableMa
 
     override val actor: Actor
         get() = Image(MagellanGame.assets.texture("sectorview_shop.png"))
-
-    override val title = "Trading Post"
 
     private fun fillInventory() {
         inventory.clear()
@@ -156,16 +157,8 @@ class Shop(sector: Sector) : MovingGameObj(sector), IDrawableWindow, IDrawableMa
             override fun changed(event: ChangeListener.ChangeEvent, actor: Actor) {
                 MagellanGame.instance.windowScreen.closeWindow()
 
-                if (!MagellanGame.gameState.droneInfoShown && droneBought) {
-                    val s = StringBuilder()
-                            .appendln("Drones can be deployed by clicking on your ship")
-                            .appendln("\non the left side. After deploying a drone,")
-                            .appendln("\nbe sure to click on it and setup routines.")
-                            .appendln("\ndepending on the level, a drone can hold up to 5")
-                            .appendln("\nof them. If you setup less routines than maximum")
-                            .appendln("\nthe set up routines become more powerful.").toString()
-                    MagellanGame.instance.windowScreen.getWindow("INFO", s)
-                    MagellanGame.gameState.droneInfoShown = true
+                if (droneBought) {
+                    displayTutorialIfNeeded()
                 }
             }
         })
@@ -185,6 +178,21 @@ class Shop(sector: Sector) : MovingGameObj(sector), IDrawableWindow, IDrawableMa
         windowContent.addActor(listAndInfo)
         windowContent.addActor(menu)
         window.add(windowContent)
+    }
+
+    private fun displayTutorialIfNeeded() {
+        if (BuildConfig.DontDisplayTutorial) return
+        if (MagellanGame.gameState.droneTutorialShown) return
+
+        MagellanGame.gameState.droneTutorialShown = true
+        MagellanGame.instance.windowScreen.getWindow("INFO", """
+            Drones can be deployed by clicking on your ship
+            on the left side. After deploying a drone,
+            be sure to click on it and setup routines.
+            depending on the level, a drone can hold up to 5
+            of them. If you setup less routines than maximum
+            the set up routines become more powerful.
+            """.trimIndent())
     }
 
     override fun moveTo(sector: Sector) {}

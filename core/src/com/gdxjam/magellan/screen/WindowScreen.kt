@@ -44,8 +44,6 @@ class WindowScreen(game: MagellanGame) : BaseScreen(game) {
     private var lastShownSector: Sector? = null
     private var effects: Array<ParticleEffect>? = null
 
-    private var startTutorialShown = false
-
     init {
         createStarfield()
 
@@ -147,13 +145,14 @@ class WindowScreen(game: MagellanGame) : BaseScreen(game) {
 
     private fun displayTutorialIfNeeded() {
         if (BuildConfig.DontDisplayTutorial) return
-        if (startTutorialShown) return
+        if (MagellanGame.gameState.startTutorialShown) return
 
-        startTutorialShown = true
+        MagellanGame.gameState.startTutorialShown = true
         getWindow("Info", """
                     Click on your ship to see it's stats.
                     Click on the shop to interact with it.
-                    Click 'Star Map' to see your surroundings.""".trimIndent())
+                    Click 'Star Map' to see your surroundings.
+                    """.trimIndent())
     }
 
     fun drawSurroundings() {

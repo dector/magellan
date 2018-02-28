@@ -61,8 +61,6 @@ class MapScreen(game: MagellanGame) : BaseScreen(game) {
     internal var lineWidth = 2f
     private var sectorToFocusOn: Sector? = null
 
-    private var startTutorialShown = false
-
     init {
         universe = game.universe
 
@@ -132,9 +130,9 @@ class MapScreen(game: MagellanGame) : BaseScreen(game) {
 
     private fun displayTutorialIfNeeded() {
         if (BuildConfig.DontDisplayTutorial) return
-        if (startTutorialShown) return
+        if (MagellanGame.gameState.mapTutorialShown) return
 
-        startTutorialShown = true
+        MagellanGame.gameState.mapTutorialShown = true
         getWindow("Info", """
             Here you can jump to other sectors.
             Just click on a connected sector to try it out!""".trimIndent())
